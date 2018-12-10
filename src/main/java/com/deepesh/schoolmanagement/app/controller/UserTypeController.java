@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.deepesh.schoolmanagement.app.model.UserType;
 import com.deepesh.schoolmanagement.app.repository.UserTypeRepository;
@@ -31,7 +32,7 @@ public class UserTypeController {
 	@RequestMapping(value="add-userType", method=RequestMethod.POST)
 	public String addUserType(@ModelAttribute("userType")UserType userType) {
 		userTypeRepository.save(userType);
-		return "vewUserTypes";
+		return "redirect:/viewUserTypes";
 	}
 	
 	@RequestMapping(value="viewUserTypes", method=RequestMethod.GET)
@@ -40,6 +41,11 @@ public class UserTypeController {
 		return "viewUserType";
 	}
 	
+	@RequestMapping(value="deleteType", method=RequestMethod.GET)
+	public String deleteType(@RequestParam("id")Long id) {
+		userTypeRepository.deleteById(id);
+		return "redirect:/viewUserTypes";
+	}
 	
 
 }

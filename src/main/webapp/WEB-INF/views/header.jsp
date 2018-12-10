@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Bootstrap Admin Theme</title>
+<title>School Management System</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,18 +26,8 @@
 <!-- Custom Fonts -->
 <link href="../vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
-
 <body>
-
 	<div id="wrapper">
 
 		<!-- Navigation -->
@@ -50,7 +40,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+				<a class="navbar-brand" href="index.html">School Management
+					System</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -254,16 +245,46 @@
 							</ul> <!-- /.nav-second-level --></li>
 						<li><a href="tables.html"><i class="fa fa-table fa-fw"></i>
 								Tables</a></li>
+
 						<li><a href="userTypeForm"><i class="fa fa-edit fa-fw"></i>
 								UserType</a></li>
 						<li><a href="viewUserTypes"><i class="fa fa-edit fa-fw"></i>
 								View UserType</a></li>
 
-						<li><a href="userTypeForm"><i class="fa fa-edit fa-fw"></i>
-							Teacher</a>
-						</li>
-						<li><a href="viewUserTypes"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="addClasses"><i class="fa fa-edit fa-fw"></i>
+								Add Class</a></li>
+						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
+								View Class</a></li>
+
+						<li><a href="addExam"><i class="fa fa-edit fa-fw"></i>
+								Add Exam</a></li>
+						<li><a href="viewExam"><i class="fa fa-edit fa-fw"></i>
+								View Exam</a></li>
+						<li><a href="teacherForm"><i class="fa fa-edit fa-fw"></i>
+								Teacher</a></li>
+						<li><a href="viewTeachers"><i class="fa fa-edit fa-fw"></i>
 								View Teacher</a></li>
+
+						<li><a href=attendanceForm"><i class="fa fa-edit fa-fw"></i>
+								Attendance</a></li>
+						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
+								View Attendance</a></li>
+
+						<li><a href="courseForm"><i class="fa fa-edit fa-fw"></i>
+								Course</a></li>
+						<li><a href="viewCourse"><i class="fa fa-edit fa-fw"></i>
+								View Course</a></li>
+
+						<li><a href="testPaperForm"><i class="fa fa-edit fa-fw"></i>
+								Test Paper</a></li>
+						<li><a href="viewTeacher"><i class="fa fa-edit fa-fw"></i>
+								View Test Paper</a></li>
+
+						<li><a href="intakeForm"><i class="fa fa-edit fa-fw"></i>
+								Intake</a></li>
+						<li><a href="viewIntake"><i class="fa fa-edit fa-fw"></i>
+								Intake</a></li>
+
 						<li><a href="#"><i class="fa fa-wrench fa-fw"></i> UI
 								Elements<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
@@ -299,3 +320,6 @@
 			</div>
 			<!-- /.navbar-static-side -->
 		</nav>
+	</div>
+</body>
+</html>

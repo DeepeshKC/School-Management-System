@@ -40,9 +40,9 @@
 								<c:forEach var="user" items="${userTypeList}">
 
 									<tr class="odd gradeX">
-										<td>${user.getId()}</td>
+										<td>${user.getUserTypeId()}</td>
 										<td>${user.getUserType()}</td>
-										<td><a href="deleteType?id=${user.getId()}"
+										<td><a href="deleteType?id=${user.getUserTypeId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
 									</tr>
 								</c:forEach>

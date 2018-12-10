@@ -33,21 +33,16 @@
 								<tr>
 									<th>Class ID</th>
 									<th>Class Name</th>
-									<th>Date From</th>
-									<th>Date To</th>
-									<th>Time</th>
+									<th>Action</th>
 								</tr>
-								<c:forEach var="classes" items="{Classes List}">
+								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
 									<tr class="odd gradeX">
-										<td>${classes.getId()}</td>
-										<td>${classes.getClasstName()}</td>
-										<td>${classes.getDateFrom()}</td>
-										<td>${classes.getDateTo()}</td>
-										<td>${classes.getTime()}</td>
-										<td><a href="updateRoles?id=${role.getId()}"
+										<td>${classes.getClassId()}</td>
+										<td>${classes.getClassName()}</td>
+										<td><a href="#"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
-											href="deleteRole?id=${role.getId()}" class="btn btn-danger"><span
+											href="deleteClasses?id=${classes.getClassId()}" class="btn btn-danger"><span
 												class="fa fa-trash"></span></a></td>
 									</tr>
 								</c:forEach>

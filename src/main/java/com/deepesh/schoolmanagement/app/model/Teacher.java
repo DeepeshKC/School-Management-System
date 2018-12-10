@@ -2,9 +2,13 @@ package com.deepesh.schoolmanagement.app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -35,6 +39,10 @@ public class Teacher {
 
 	@Column(name = "contact_no")
 	private String contactNo;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="userType_id")
+	public UserType userType;
 
 	public long getTeacherId() {
 		return teacherId;
@@ -98,6 +106,14 @@ public class Teacher {
 
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
+	}
+
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
 	}
 
 }
