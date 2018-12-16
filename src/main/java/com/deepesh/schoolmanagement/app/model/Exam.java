@@ -15,8 +15,14 @@ public class Exam {
 
 	private long examId;
 
-	@Column(name = "exam_name")
-	private String examName;
+	@Column(name = "exam_title")
+	private String examTitle;
+	
+	@Column(name="exam_decription")
+	private String examDescription;
+	
+	@Column(name="exam_date")
+	private String examDate;
 
 	public long getExamId() {
 		return examId;
@@ -26,12 +32,30 @@ public class Exam {
 		this.examId = examId;
 	}
 
-	public String getExamName() {
-		return examName;
+	public String getExamTitle() {
+		return examTitle;
 	}
 
-	public void setExamName(String examName) {
-		this.examName = examName;
+	public void setExamTitle(String examTitle) {
+		this.examTitle = examTitle;
 	}
+
+	public String getExamDescription() {
+		return examDescription;
+	}
+
+	public void setExamDescription(String examDescription) {
+		this.examDescription = examDescription;
+	}
+
+	public String getExamDate() {
+		return examDate;
+	}
+
+	public void setExamDate(String examDate) {
+		this.examDate = examDate;
+	}
+
+	
 
 }

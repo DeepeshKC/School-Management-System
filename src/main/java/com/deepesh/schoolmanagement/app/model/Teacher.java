@@ -17,8 +17,8 @@ import javax.persistence.Table;
 public class Teacher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long teacherId;
 
-	private long teacherId;
 	@Column(name = "first_name")
 	private String firstName;
 
@@ -39,16 +39,16 @@ public class Teacher {
 
 	@Column(name = "contact_no")
 	private String contactNo;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="userType_id")
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "userType_id")
 	public UserType userType;
 
-	public long getTeacherId() {
+	public Long getTeacherId() {
 		return teacherId;
 	}
 
-	public void setTeacherId(long teacherId) {
+	public void setTeacherId(Long teacherId) {
 		this.teacherId = teacherId;
 	}
 

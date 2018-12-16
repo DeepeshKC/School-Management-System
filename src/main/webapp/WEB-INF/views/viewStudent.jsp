@@ -42,20 +42,20 @@
 									<th>Action</th>
 								</tr>
 
-								<c:forEach var="Student" items="${StudentsList}">
+								<c:forEach var="student" items="${studentsList}">
 									<tr class="odd gradeX">
-										<td>${Student.getStudentId()}</td>
-										<td>${Student.getFirstName()}</td>
-										<td>${Student.getLastName()}</td>
-										<td>${Student.getUsername()}</td>
-										<td>${Student.getEmail()}</td>
-										<td>${Student.getAddress()}</td>
-										<td>${Student.getContactNo()}</td>
-										<td>${Student.getUserType().getUserType()}</td>
+										<td>${student.getId()}</td>
+										<td>${student.getFirstName()}</td>
+										<td>${student.getLastName()}</td>
+										<td>${student.getUsername()}</td>
+										<td>${student.getEmail()}</td>
+										<td>${student.getAddress()}</td>
+										<td>${student.getContactNo()}</td>
+										<td>${student.getUserType().getUserType()}</td>
 										<td><a
-											href="update-updateStudent?id=${Student.getStudentId()}"
+											href="updateStudents?id=${student.getId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
-											href="delete-deleteStudent?id=${Student.getStudentId()}"
+											href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
 									</tr>
 								</c:forEach>

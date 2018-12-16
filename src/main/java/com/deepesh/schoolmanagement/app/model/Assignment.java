@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_assignement")
+@Table(name = "tbl_assignment")
 public class Assignment {
 	@Id
 	@GeneratedValue
@@ -24,6 +24,9 @@ public class Assignment {
 
 	@Column(name = "assignment_deadline")
 	private Date assignmentDeadline;
+	
+	@Column(name="assignment_file")
+	private String assignmentFile; 
 
 	public long getAssignmentId() {
 		return assignmentId;

@@ -12,22 +12,28 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name="tbl_userType")
+@Table(name = "tbl_userType")
 public class UserType {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private long userTypeId;
-	
-	@Column(name="userType")
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "userType")
+	private List<Teacher> teachers = new ArrayList<>();
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "userType")
+	private List<Student> students = new ArrayList<>();
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "userType")
+	private List<AdministrativeStaff> administrativeStaff = new ArrayList<>();
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "userType")
+	private List<Parent> parents = new ArrayList<>();
+
+	@Column(name = "userType")
 	private String userType;
-	
-	@OneToMany(cascade=CascadeType.ALL, orphanRemoval=true, mappedBy="userType")
-   private List<Teacher> teachers=new ArrayList<>();
-	
 
 	public long getUserTypeId() {
 		return userTypeId;
@@ -53,4 +59,27 @@ public class UserType {
 		this.teachers = teachers;
 	}
 
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+	public List<AdministrativeStaff> getAdministrativeStaff() {
+		return administrativeStaff;
+	}
+
+	public void setAdministrativeStaff(List<AdministrativeStaff> administrativeStaff) {
+		this.administrativeStaff = administrativeStaff;
+	}
+
+	public List<Parent> getParents() {
+		return parents;
+	}
+
+	public void setParents(List<Parent> parents) {
+		this.parents = parents;
+	}
 }

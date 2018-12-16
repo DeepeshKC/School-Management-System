@@ -1,5 +1,7 @@
 package com.deepesh.schoolmanagement.app.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,17 +27,17 @@ public class TeacherController {
 	}
 
 	@RequestMapping(value = "/addTeachers", method = RequestMethod.GET)
-	public String loadAddTeacher() {
+	public String loadAddTeacherForm() {
 		return "addTeacher";
 	}
 
-	@RequestMapping(value = "add-add-Teacher", method = RequestMethod.POST)
+	@RequestMapping(value = "add-addTeacher", method = RequestMethod.POST)
 	public String addTeacher(@ModelAttribute("teacher") Teacher teacher) {
 		UserType ur = new UserType();
 		ur.setUserTypeId(4);
 		teacher.setUserType(ur);
 		teacherRepository.save(teacher);
-		return "redirect:viewTeachers";
+		return "redirect:/viewTeachers";
 	}
 
 	@RequestMapping(value = "viewTeachers", method = RequestMethod.GET)
@@ -48,5 +50,22 @@ public class TeacherController {
 	public String deleteTeacher(@RequestParam("id") Long id) {
 		teacherRepository.deleteById(id);
 		return "redirect:/viewTeachers";
+	}
+	
+	@RequestMapping(value="updateTeachers", method=RequestMethod.GET)
+	public String loadUpdateTeacherForm(@RequestParam("id")Long id, Model model) {
+		Optional<Teacher> teacher=teacherRepository.findById(id);
+		Teacher tea=teacher.get();
+		model.addAttribute("teachers", tea);
+		return "updateTeacher";
+		
+		
+	}
+	
+	@RequestMapping(value="update-updateTeacher", method=RequestMethod.POST)
+	public String updateTeacher(@ModelAttribute("teacher")Teacher teacher) {
+		
+		teacherRepository.save(teacher);
+		return "redirect:viewTeachers";
 	}
 }

@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View Exam</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Tables</h1>
+				<h1 class="page-header">Exam</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">DataTables Advanced Tables</div>
+					<div class="panel-heading">Exam Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
@@ -33,6 +33,8 @@
 								<tr>
 									<th>Exam ID</th>
 									<th>Exam Name</th>
+									<th>Exam Description</th>
+									<th>Exam Date</th>
 									<th>Action</th>
 
 								</tr>
@@ -40,7 +42,9 @@
 									<tr class="odd gradeX">
 									<tr class="odd gradeX">
 										<td>${exam.getExamId()}</td>
-										<td>${exam.getExamName()}</td>
+										<td>${exam.getExamTitle()}</td>
+										<td>${exam.getExamDescription()}</td>
+										<td>${exam.getExamDate()}</td>
 										<td><a href="#" class="btn btn-success"><span
 												class="fa fa-edit"></span></a>|<a
 											href="deleteExam?id=${exam.getExamId()}"

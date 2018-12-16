@@ -22,7 +22,7 @@ public class ExamController {
 		return new Exam();
 	}
 
-	@RequestMapping(value = "addExam", method = RequestMethod.GET)
+	@RequestMapping(value = "addExams", method = RequestMethod.GET)
 	public String loadAddExam() {
 		return "addExam";
 	}

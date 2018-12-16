@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>View User Type</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Tables</h1>
+				<h1 class="page-header">User Type</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">DataTables Advanced Tables</div>
+					<div class="panel-heading">User Type Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"

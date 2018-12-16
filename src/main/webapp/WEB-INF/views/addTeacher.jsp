@@ -20,45 +20,45 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<form:form name="qryform" method="POST" action="add-add-teacher"
+							<form:form name="qryform" method="POST" action="add-addTeacher"
 								modelAttribute="teacher">
 
 								<div class="form-group">
 									<label>Please add first name</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="firstName" class="form-control"
 										placeholder="Enter Teacher's First Name" />
 								</div>
 								<div class="form-group">
 									<label>Please add last name</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="lastName" class="form-control"
 										placeholder="Enter Teacher's Last Name" />
 								</div>
 								<div class="form-group">
 									<label>Please add username</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="username" class="form-control"
 										placeholder="Enter Teacher's Username" />
 								</div>
 								<div class="form-group">
 									<label>Please add email address</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="email" class="form-control"
 										placeholder="Enter E-mail Address" />
 								</div>
 
 								<div class="form-group">
 									<label>Please add password</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="password" class="form-control"
 										placeholder="Enter password" />
 								</div>
 
 								<div class="form-group">
 									<label>Please add Address</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="address" class="form-control"
 										placeholder="Enter Address" />
 								</div>
 
 								<div class="form-group">
 									<label>Please add Contact Number</label>
-									<form:input path="Teacher" class="form-control"
+									<form:input path="contactNo" class="form-control"
 										placeholder="Enter Contact Number" />
 								</div>
 								<button type="submit" class="btn btn-default">Submit</button>

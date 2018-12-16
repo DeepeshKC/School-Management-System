@@ -1,4 +1,5 @@
 package com.deepesh.schoolmanagement.app.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,40 +13,40 @@ import com.deepesh.schoolmanagement.app.repository.UserTypeRepository;
 
 @Controller
 public class UserTypeController {
-	@Autowired private UserTypeRepository userTypeRepository;
-	
+	@Autowired
+	private UserTypeRepository userTypeRepository;
+
 	@ModelAttribute("userType")
 	public UserType getUserType() {
 		return new UserType();
 	}
-	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String loadDashboard() {
 		return "dashboard";
 	}
-		
-	@RequestMapping(value="userTypeForm", method=RequestMethod.GET)
+
+	@RequestMapping(value = "userTypeForm", method = RequestMethod.GET)
 	public String loadUserType() {
 		return "addUserType";
 	}
-	
-	@RequestMapping(value="add-userType", method=RequestMethod.POST)
-	public String addUserType(@ModelAttribute("userType")UserType userType) {
+
+	@RequestMapping(value = "add-userType", method = RequestMethod.POST)
+	public String addUserType(@ModelAttribute("userType") UserType userType) {
 		userTypeRepository.save(userType);
 		return "redirect:/viewUserTypes";
 	}
-	
-	@RequestMapping(value="viewUserTypes", method=RequestMethod.GET)
+
+	@RequestMapping(value = "viewUserTypes", method = RequestMethod.GET)
 	public String viewUserType(Model model) {
-		model.addAttribute("userTypeList",userTypeRepository.findAll());
+		model.addAttribute("userTypeList", userTypeRepository.findAll());
 		return "viewUserType";
 	}
-	
-	@RequestMapping(value="deleteType", method=RequestMethod.GET)
-	public String deleteType(@RequestParam("id")Long id) {
+
+	@RequestMapping(value = "deleteType", method = RequestMethod.GET)
+	public String deleteType(@RequestParam("id") Long id) {
 		userTypeRepository.deleteById(id);
 		return "redirect:/viewUserTypes";
 	}
-	
 
 }

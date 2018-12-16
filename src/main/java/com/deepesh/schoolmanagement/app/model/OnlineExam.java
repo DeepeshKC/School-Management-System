@@ -8,14 +8,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_result")
-public class TestPaper {
+@Table(name = "tbl_online_exam")
+public class OnlineExam {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	public long testpaperId;
+	private Long onlineExamId;
 
-	@Column(name = "test_paper_name")
-	private String testpaperName;
+	@Column(name = "exam_date")
+	private String examDate;
+
+	@Column(name = "exam_end_date")
+	private String examEndDate;
+
+	@Column(name = "exam_question")
+	private String examQuestion;
 
 }

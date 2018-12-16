@@ -53,7 +53,7 @@
 										<td>${teacher.getContactNo()}</td>
 										<td>${teacher.getUserType().getUserType()}</td>
 										<td><a
-											href="update-updateTeacher?id=${teacher.getTeacherId()}"
+											href="updateTeachers?id=${teacher.getTeacherId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
 											href="delete-deleteTeacher?id=${teacher.getTeacherId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>

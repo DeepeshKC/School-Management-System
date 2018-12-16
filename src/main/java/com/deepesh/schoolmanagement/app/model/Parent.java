@@ -2,17 +2,20 @@ package com.deepesh.schoolmanagement.app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_parents")
-public class Parents {
+@Table(name = "tbl_parent")
+public class Parent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long parentsId;
+	private Long parentId;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -38,12 +41,16 @@ public class Parents {
 	@Column(name = "profession")
 	private String profession;
 
-	public long getParentsId() {
-		return parentsId;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "userType_id")
+	public UserType userType;
+
+	public Long getParentId() {
+		return parentId;
 	}
 
-	public void setParentsId(long parentsId) {
-		this.parentsId = parentsId;
+	public void setParentId(Long parentId) {
+		this.parentId = parentId;
 	}
 
 	public String getFirstName() {
@@ -108,6 +115,14 @@ public class Parents {
 
 	public void setProfession(String profession) {
 		this.profession = profession;
+	}
+
+	public UserType getUserType() {
+		return userType;
+	}
+
+	public void setUserType(UserType userType) {
+		this.userType = userType;
 	}
 
 }

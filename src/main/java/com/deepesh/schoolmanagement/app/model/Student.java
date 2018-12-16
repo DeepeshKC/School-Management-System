@@ -4,51 +4,47 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_student")
 public class Student {
-
 	@Id
-	@GeneratedValue
+	@Column(name="student_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
 	
-	private long teacherId;
-	
-	@Column(name="first_name")
+	@Column(name="firstname")
 	private String firstName;
-	
-	@Column(name = "last_name")
+	@Column(name="lastname")
 	private String lastName;
-
-	@Column(name = "username")
-	private String username;
-
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "password")
-	private String password;
-
-	@Column(name = "address")
+	@Column(name="address")
 	private String address;
-
-	@Column(name = "contact_no")
+	
+	@Column(name="contact")
 	private String contactNo;
 	
+	@Column(name="email")
+	private String email;
+	@Column(name="username")
+	private String username;
+	
+	@Column(name="password")
+	private String password;
+	
+	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="userType_id")
-	public UserType userType;
+	private UserType userType;
 
-	public long getTeacherId() {
-		return teacherId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setTeacherId(long teacherId) {
-		this.teacherId = teacherId;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -67,30 +63,6 @@ public class Student {
 		this.lastName = lastName;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getAddress() {
 		return address;
 	}
@@ -107,6 +79,30 @@ public class Student {
 		this.contactNo = contactNo;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public UserType getUserType() {
 		return userType;
 	}
@@ -114,5 +110,11 @@ public class Student {
 	public void setUserType(UserType userType) {
 		this.userType = userType;
 	}
+	
+	
+	
+	
+	
+	
 
 }
