@@ -36,7 +36,7 @@ public class SubjectController {
 		return "redirect:/viewSubjects";
 	}
 
-	@RequestMapping(value = "/viewSubjects", method = RequestMethod.GET)
+	@RequestMapping(value = "viewSubjects", method = RequestMethod.GET)
 	public String loadViewSubject(Model model) {
 		model.addAttribute("subjectList", subjectRepository.findAll());
 		return "viewSubject";

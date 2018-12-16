@@ -1,7 +1,5 @@
 package com.deepesh.schoolmanagement.app.model;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,17 +14,17 @@ public class Assignment {
 
 	private long assignmentId;
 
-	@Column(name = "assignement_title")
+	@Column(name = "assignment_title")
 	private String assignmentTitle;
 
 	@Column(name = "assignment_description")
 	private String assignmentDescription;
 
 	@Column(name = "assignment_deadline")
-	private Date assignmentDeadline;
-	
-	@Column(name="assignment_file")
-	private String assignmentFile; 
+	private String assignmentDeadline;
+
+	@Column(name = "assignment_file")
+	private String assignmentFile;
 
 	public long getAssignmentId() {
 		return assignmentId;
@@ -52,12 +50,20 @@ public class Assignment {
 		this.assignmentDescription = assignmentDescription;
 	}
 
-	public Date getAssignmentDeadline() {
+	public String getAssignmentDeadline() {
 		return assignmentDeadline;
 	}
 
-	public void setAssignmentDeadline(Date assignmentDeadline) {
+	public void setAssignmentDeadline(String assignmentDeadline) {
 		this.assignmentDeadline = assignmentDeadline;
+	}
+
+	public String getAssignmentFile() {
+		return assignmentFile;
+	}
+
+	public void setAssignmentFile(String assignmentFile) {
+		this.assignmentFile = assignmentFile;
 	}
 
 }

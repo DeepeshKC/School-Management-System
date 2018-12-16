@@ -60,11 +60,20 @@
 						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
 								Dashboard</a></li>
 
+						<li><a href="calendar"><i class="fas fa-calendar-alt"></i>
+								Calendar</a></li>
+
 						<li><a href="userTypeForm"><i class="fa fa-edit fa-fw"></i>
 								UserType</a></li>
 						<li><a href="viewUserTypes"><i class="fa fa-edit fa-fw"></i>
 								View UserType</a></li>
 
+						<li><a href="#"><i class="fas fa-chalkboard-teacher"></i>
+								Charts<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="flot.html">Flot Charts</a></li>
+								<li><a href="morris.html">Morris.js Charts</a></li>
+							</ul>
 						<li><a href="addClasses"><i class="fa fa-edit fa-fw"></i>
 								Add Class</a></li>
 						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
@@ -72,15 +81,24 @@
 
 						<li><a href="addExams"><i class="fa fa-edit fa-fw"></i>
 								Add Exam</a></li>
-						<li><a href="viewExam"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="viewExams"><i class="fa fa-edit fa-fw"></i>
 								View Exam</a></li>
 
-						<li><a href="addTeachers"><i class="fa fa-edit fa-fw"></i>
-								Add Teacher</a></li>
+						<li><a href="addOnlineExams"><i class="fa fa-edit fa-fw"></i>
+								Add Online Examination</a></li>
+
+						<li><a href="online-Exam"><i class="fa fa-edit fa-fw"></i>
+								Online Examination</a></li>
+
+						<li><a href="online-Exam1"><i class="fa fa-edit fa-fw"></i>
+								Online Examination1</a></li>
+
+						<li><a href="addTeachers"><i
+								class="fas fa-chalkboard-teacher"></i> Add Teacher</a></li>
 						<li><a href="viewTeachers"><i class="fa fa-edit fa-fw"></i>
 								View Teacher</a></li>
 
-						<li><a href="addStudents"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="addStudents"><i class="fas fa-user-graduate"></i>
 								Add Student</a></li>
 						<li><a href="viewStudents"><i class="fa fa-edit fa-fw"></i>
 								View Student</a></li>
@@ -90,8 +108,8 @@
 						<li><a href="viewAdminStaffs"><i class="fa fa-edit fa-fw"></i>
 								View Administrative Staff</a></li>
 
-						<li><a href="addParents"><i class="fa fa-edit fa-fw"></i>
-								Add Parent</a></li>
+						<li><a href="addParents"><i class="fas fa-user"></i> Add
+								Parent</a></li>
 						<li><a href="viewParents"><i class="fa fa-edit fa-fw"></i>
 								View Parent</a></li>
 
@@ -104,6 +122,17 @@
 								Add Subject</a></li>
 						<li><a href="viewSubjects"><i class="fa fa-edit fa-fw"></i>
 								View Subject</a></li>
+
+						<li><a href="addAssignments"><i class="fa fa-edit fa-fw"></i>
+								Add Assignment</a></li>
+						<li><a href="viewAssignments"><i class="fa fa-edit fa-fw"></i>
+								View Assignments</a></li>
+
+						<li><a href="addQuestionPapers"><i
+								class="fa fa-editfa-fw"> </i> Add Question Paper</a></li>
+						<li><a href="viewQuestionPapers"><i
+								class="fa fa-edit fa-fw"></i> View Question Paper</a></li>
+
 
 						<li><a href="addAttendances"><i class="fa fa-edit fa-fw"></i>
 								Add Attendance</a></li>

@@ -23,11 +23,46 @@
 							<form:form name="qryform" method="POST" action="add-addQuestion"
 								modelAttribute="questionPaper">
 								<div class="form-group">
-									<label>Please add question paper name</label>
+									<label>Please Add Question Paper Name</label>
 									<form:input path="questionPaperName" class="form-control"
 										placeholder="Enter question paper name" />
 								</div>
-								<button type="submit" class="btn btn-default">Submit</button>
+
+								<div class="form-group">
+									<label>Please Add Question 1</label>
+									<form:input path="question1" class="form-control"
+										placeholder="Enter question 1" />
+								</div>
+								<div class="form-group">
+									<label>Please Add Options</label>
+									<form:input path="option1" class="form-control"
+										placeholder="Enter option" />
+								</div>
+								<div class="form-group">
+									<label>Please Add Options</label>
+									<form:input path="option2" class="form-control"
+										placeholder="Enter option" />
+								</div>
+
+								<div class="form-group">
+									<label>Please Add Options</label>
+									<form:input path="option3" class="form-control"
+										placeholder="Enter option" />
+								</div>
+
+								<div class="form-group">
+									<label>Please Add Options</label>
+									<form:input path="option4" class="form-control"
+										placeholder="Enter option" />
+								</div>
+
+								<div class="form-group">
+									<label>Please Add Right Answer </label>
+									<form:input path="rightAnswer" class="form-control"
+										placeholder="Enter Right Answer" />
+								</div>
+
+								<button type="submit" class="btn btn-success">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							</form:form>
 						</div>

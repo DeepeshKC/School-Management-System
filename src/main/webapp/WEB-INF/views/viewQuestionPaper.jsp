@@ -31,14 +31,28 @@
 									<tr>
 										<th>Question Paper ID</th>
 										<th>Question Paper Name</th>
+										<th>Question1</th>
+										<th>Option1</th>
+										<th>Option2</th>
+										<th>Option3</th>
+										<th>Option4</th>
+										<th>Right Answer</th>
+										<th>Question1</th>
+										<th>Class ID</th>
 										<th>Action</th>
 									</tr>
 
-									<c:forEach var="student" items="${questionPaperList}">
+									<c:forEach var="questionPaper" items="${questionPaperList}">
 										<tr class="odd gradeX">
 											<td>${questionPaper.getQuestionPaperId()}</td>
 											<td>${questionPaper.getQuestionPaperName()}</td>
-											<td>${questionPaper.getClasses().getClasses()}</td>
+											<td>${questionPaper.getQuestion1()}</td>
+											<td>${questionPaper.getOption1()}</td>
+											<td>${questionPaper.getOption2()}</td>
+											<td>${questionPaper.getOption3()}</td>
+											<td>${questionPaper.getOption4()}</td>
+											<td>${questionPaper.getRightAnswer()}</td>
+											<td>${questionPaper.getClasses1().getClasses1()}</td>
 											<td><a
 												href="update-updateQuestionPapers?id=${questionPaper.getQuestionPaperId()}"
 												class="btn btn-success"><span class="fa fa-edit"></span></a>|<a

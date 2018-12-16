@@ -25,7 +25,7 @@ public class Classes {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
 	private List<Subject> subject = new ArrayList<>();
 	
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes1")
 	private List<QuestionPaper> questionpaper = new ArrayList<>();
 
 	public long getClassId() {

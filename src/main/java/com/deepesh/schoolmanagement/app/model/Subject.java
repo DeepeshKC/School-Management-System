@@ -16,14 +16,13 @@ public class Subject {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Long subjectId;
 
 	@Column(name = "subject_name")
 	private String subjectName;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "clas_id")
+	@JoinColumn(name = "class_id")
 	public Classes classes;
 
 	public Long getSubjectId() {

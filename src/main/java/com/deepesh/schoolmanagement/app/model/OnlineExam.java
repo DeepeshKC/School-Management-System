@@ -16,13 +16,56 @@ public class OnlineExam {
 
 	private Long onlineExamId;
 
-	@Column(name = "exam_date")
-	private String examDate;
+	@Column(name = "subject")
+	private String subject;
 
-	@Column(name = "exam_end_date")
-	private String examEndDate;
+	@Column(name = "total_questions")
+	private String totalQuestions;
 
-	@Column(name = "exam_question")
-	private String examQuestion;
+	@Column(name = "marks")
+	private String marks;
+	
+	@Column(name="time_limit")
+	private String timeLimit;
+
+	public Long getOnlineExamId() {
+		return onlineExamId;
+	}
+
+	public void setOnlineExamId(Long onlineExamId) {
+		this.onlineExamId = onlineExamId;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getTotalQuestions() {
+		return totalQuestions;
+	}
+
+	public void setTotalQuestions(String totalQuestions) {
+		this.totalQuestions = totalQuestions;
+	}
+
+	public String getMarks() {
+		return marks;
+	}
+
+	public void setMarks(String marks) {
+		this.marks = marks;
+	}
+
+	public String getTimeLimit() {
+		return timeLimit;
+	}
+
+	public void setTimeLimit(String timeLimit) {
+		this.timeLimit = timeLimit;
+	}
 
 }
