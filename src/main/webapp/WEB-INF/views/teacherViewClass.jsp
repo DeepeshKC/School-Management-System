@@ -34,23 +34,15 @@
 									<th>Class ID</th>
 									<th>Class Name</th>
 									<th>Action</th>
-									<th>Add Student</th>
 								</tr>
 								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
 									<tr class="odd gradeX">
 										<td>${classes.getClassId()}</td>
 										<td>${classes.getClassName()}</td>
-										<td><a href="#"
-											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
-											href="deleteClasses?id=${classes.getClassId()}" class="btn btn-danger"><span
-												class="fa fa-trash"></span></a></td>
-												
-												<td><a href="/addStudent?id=${classes.getClassId()}"
-											class="btn btn-success"><span class="fa fa-edit"></span></a></td>
-					
-												
-												
+										<td><a
+											href="/teacherViewStudents?id=${classes.getClassId()}"
+											class="btn btn-success">View Students </a></td>
 									</tr>
 								</c:forEach>
 							</thead>

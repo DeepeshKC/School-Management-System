@@ -1,5 +1,9 @@
 package com.deepesh.schoolmanagement.app.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,37 +11,45 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tbl_student")
+@Table(name = "tbl_student")
 public class Student {
 	@Id
-	@Column(name="student_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "student_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="firstname")
+
+	@Column(name = "firstname")
 	private String firstName;
-	@Column(name="lastname")
+
+	@Column(name = "lastname")
 	private String lastName;
-	@Column(name="address")
+
+	@Column(name = "address")
 	private String address;
-	
-	@Column(name="contact")
+
+	@Column(name = "contact_no")
 	private String contactNo;
-	
-	@Column(name="email")
+
+	@Column(name = "email")
 	private String email;
-	@Column(name="username")
+	
+	@Column(name = "username")
 	private String username;
-	
-	@Column(name="password")
+
+	@Column(name = "password")
 	private String password;
-	
-	
-	@ManyToOne(fetch=FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	private UserType userType;
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
+	private List<Attendance> attendance = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
+	private List<StudentClass> studentClass = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -110,11 +122,21 @@ public class Student {
 	public void setUserType(UserType userType) {
 		this.userType = userType;
 	}
-	
-	
-	
-	
-	
-	
 
+	public List<Attendance> getAttendance() {
+		return attendance;
+	}
+
+	public void setAttendance(List<Attendance> attendance) {
+		this.attendance = attendance;
+	}
+
+	public List<StudentClass> getStudentClass() {
+		return studentClass;
+	}
+
+	public void setStudentClass(List<StudentClass> studentClass) {
+		this.studentClass = studentClass;
+	}
+    
 }

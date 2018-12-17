@@ -52,7 +52,7 @@
 											<td>${questionPaper.getOption3()}</td>
 											<td>${questionPaper.getOption4()}</td>
 											<td>${questionPaper.getRightAnswer()}</td>
-											<td>${questionPaper.getClasses1().getClasses1()}</td>
+											<td>${questionPaper.getClasses1() .getClassId()}</td>
 											<td><a
 												href="update-updateQuestionPapers?id=${questionPaper.getQuestionPaperId()}"
 												class="btn btn-success"><span class="fa fa-edit"></span></a>|<a

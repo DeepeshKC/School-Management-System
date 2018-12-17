@@ -1,5 +1,7 @@
 package com.deepesh.schoolmanagement.app.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,19 +11,23 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tbl_attendance")
 public class Attendance {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "attendance_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Long attendanceId;
 
-	@Column(name = "attendance_name")
-	private String attendanceName;
+	@Column(name = "date")
+	@Temporal(TemporalType.DATE)
+	private Date date;
 
-	@Column(name = "Status")
+	@Column(name = "status")
 	private String status;
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -36,12 +42,12 @@ public class Attendance {
 		this.attendanceId = attendanceId;
 	}
 
-	public String getAttendanceName() {
-		return attendanceName;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setAttendanceName(String attendanceName) {
-		this.attendanceName = attendanceName;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String getStatus() {

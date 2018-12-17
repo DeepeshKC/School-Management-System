@@ -13,30 +13,38 @@ import com.deepesh.schoolmanagement.app.repository.ClassesRepository;
 
 @Controller
 public class ClassesController {
-	@Autowired private ClassesRepository classRepository;
+	@Autowired
+	private ClassesRepository classRepository;
 
-	@ModelAttribute("classes") 
+	@ModelAttribute("classes")
 	public Classes getClasses() {
 		return new Classes();
 	}
-	
-	@RequestMapping(value="addClasses", method=RequestMethod.GET)
+
+	@RequestMapping(value = "addClasses", method = RequestMethod.GET)
 	public String loadAddClassPage() {
 		return "addClasses";
 	}
-	
-	@RequestMapping(value="add-add-class", method=RequestMethod.POST)
-	public String addClasses(@ModelAttribute("classes")Classes classes ) {
+
+	@RequestMapping(value = "add-add-class", method = RequestMethod.POST)
+	public String addClasses(@ModelAttribute("classes") Classes classes) {
 		classRepository.save(classes);
 		return "redirect:/viewClasses";
 	}
-	@RequestMapping(value="/viewClasses", method=RequestMethod.GET)
+
+	@RequestMapping(value = "/viewClasses", method = RequestMethod.GET)
 	public String viewClass(Model model) {
 		model.addAttribute("classList", classRepository.findAll());
 		return "viewClass";
 	}
-	
-	@RequestMapping(value="deleteClasses", method =RequestMethod.GET)
+
+	@RequestMapping(value = "/teacherViewClasses", method = RequestMethod.GET)
+	public String teacherViewClass(Model model) {
+		model.addAttribute("classList", classRepository.findAll());
+		return "teacherViewClass";
+	}
+
+	@RequestMapping(value = "deleteClasses", method = RequestMethod.GET)
 	public String deleteClass(@RequestParam("id") Long id) {
 		classRepository.deleteById(id);
 		return "redirect:/viewClasses";

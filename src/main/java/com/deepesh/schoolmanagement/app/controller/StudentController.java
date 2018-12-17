@@ -42,7 +42,6 @@ public class StudentController {
 		model.addAttribute("studentsList", studentRepository.findAll());
 		return "viewStudent";
 	}
-
 	@RequestMapping(value = "deleteStudents", method = RequestMethod.GET)
 	public String deleteStudent(@RequestParam("id") Long id) {
 		studentRepository.deleteById(id);

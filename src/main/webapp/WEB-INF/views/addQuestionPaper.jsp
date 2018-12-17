@@ -34,32 +34,35 @@
 										placeholder="Enter question 1" />
 								</div>
 								<div class="form-group">
-									<label>Please Add Options</label>
+									<label>Please Add Answer A</label>
 									<form:input path="option1" class="form-control"
 										placeholder="Enter option" />
 								</div>
 								<div class="form-group">
-									<label>Please Add Options</label>
+									<label>Please Add Answer B</label>
 									<form:input path="option2" class="form-control"
 										placeholder="Enter option" />
 								</div>
 
 								<div class="form-group">
-									<label>Please Add Options</label>
+									<label>Please Add Answer C</label>
 									<form:input path="option3" class="form-control"
 										placeholder="Enter option" />
 								</div>
 
 								<div class="form-group">
-									<label>Please Add Options</label>
+									<label>Please Add Answer D</label>
 									<form:input path="option4" class="form-control"
 										placeholder="Enter option" />
 								</div>
-
 								<div class="form-group">
-									<label>Please Add Right Answer </label>
-									<form:input path="rightAnswer" class="form-control"
-										placeholder="Enter Right Answer" />
+									<label>Please Add Right Answer</label>
+									<form:select path="rightAnswer" class="form-control"> 
+										<form:option value="a">A</form:option>
+										<form:option value="b">B</form:option>
+										<form:option value="c">C</form:option>
+										<form:option value="d">D</form:option>
+									</form:select>
 								</div>
 
 								<button type="submit" class="btn btn-success">Submit</button>
