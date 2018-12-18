@@ -20,12 +20,7 @@ public class UserTypeController {
 	public UserType getUserType() {
 		return new UserType();
 	}
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String loadDashboard() {
-		return "dashboard";
-	}
-
+	
 	@RequestMapping(value = "userTypeForm", method = RequestMethod.GET)
 	public String loadUserType() {
 		return "addUserType";

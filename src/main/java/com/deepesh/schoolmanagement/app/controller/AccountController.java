@@ -5,8 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.deepesh.schoolmanagement.app.model.Admin;
+import com.deepesh.schoolmanagement.app.model.AdministrativeStaff;
 import com.deepesh.schoolmanagement.app.model.Login;
+import com.deepesh.schoolmanagement.app.model.Parent;
 import com.deepesh.schoolmanagement.app.model.Student;
+import com.deepesh.schoolmanagement.app.model.Teacher;
 import com.deepesh.schoolmanagement.app.repository.AccountRepository;
 
 @Controller
@@ -16,17 +20,59 @@ public class AccountController {
 	
 	@RequestMapping(value="/studentLogin", method= RequestMethod.POST )
 	public String loginStudent(Login login) {
-		Student student=accountRepository.login(login.getUsername(), login.getPassword());
-		
-		System.out.println("student"+student.getEmail());
-		
-		if(student!=null) {
-			System.out.println("logged in");
-			return "redirect:/studentDashboard";
-		} 
-		else {
-			System.out.println("invalid");
-			return "/login";
+		System.out.println(login.getUserType());
+		if (login.getUserType().equals("Student")) {
+			Student student=accountRepository.loginStudent(login.getUsername(), login.getPassword());
+			
+			if(student!=null) {
+				System.out.println("logged in");
+				return "studentDasboard";
+			} 
+			else{
+				return "redirect:/login";
+			}
+		} else if (login.getUserType().equals("Admin")) {
+			Admin student=accountRepository.loginAdmin(login.getUsername(), login.getPassword());
+			
+			if(student!=null) {
+				System.out.println("logged in");
+				return "adminDashboard";
+			} 
+			else{
+				return "redirect:/login";
+			}
+		} else if (login.getUserType().equals("Teacher")) {
+			Teacher student=accountRepository.loginTeacher(login.getUsername(), login.getPassword());
+			
+			if(student!=null) {
+				System.out.println("logged in");
+				return "studentDasboard";
+			} 
+			else{
+				return "redirect:/login";
+			}
+		} else if (login.getUserType().equals("Parent")) {
+			Parent student=accountRepository.loginParent(login.getUsername(), login.getPassword());
+			
+			if(student!=null) {
+				System.out.println("logged in");
+				return "studentDasboard";
+			} 
+			else{
+				return "redirect:/login";
+			}
+		} else if (login.getUserType().equals("AdministrationStaff")) {
+			AdministrativeStaff student=accountRepository.loginAdministrativeStaff(login.getUsername(), login.getPassword());
+			
+			if(student!=null) {
+				System.out.println("logged in");
+				return "studentDasboard";
+			} 
+			else{
+				return "redirect:/login";
+			}
+		} else {
+			return "redirect:/login";
 		}
 		
 	}

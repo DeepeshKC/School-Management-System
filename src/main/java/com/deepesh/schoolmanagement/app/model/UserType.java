@@ -16,9 +16,10 @@ import javax.persistence.Table;
 @Table(name = "tbl_userType")
 public class UserType {
 	@Id
+	@Column(name="user_type_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private long userTypeId;
+	private Integer userTypeId;
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "userType")
 	private List<Teacher> teachers = new ArrayList<>();
@@ -35,11 +36,11 @@ public class UserType {
 	@Column(name = "userType")
 	private String userType;
 
-	public long getUserTypeId() {
+	public Integer getUserTypeId() {
 		return userTypeId;
 	}
 
-	public void setUserTypeId(long userTypeId) {
+	public void setUserTypeId(Integer userTypeId) {
 		this.userTypeId = userTypeId;
 	}
 

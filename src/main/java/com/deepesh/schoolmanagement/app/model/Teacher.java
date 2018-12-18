@@ -1,5 +1,9 @@
 package com.deepesh.schoolmanagement.app.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +20,7 @@ import javax.persistence.Table;
 
 public class Teacher {
 	@Id
+	@Column(name="teacher_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long teacherId;
 
@@ -43,6 +48,9 @@ public class Teacher {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userType_id")
 	public UserType userType;
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
+	private List<TeacherClass> teacherClass = new ArrayList<>();
 
 	public Long getTeacherId() {
 		return teacherId;
@@ -115,5 +123,14 @@ public class Teacher {
 	public void setUserType(UserType userType) {
 		this.userType = userType;
 	}
+
+	public List<TeacherClass> getTeacherClass() {
+		return teacherClass;
+	}
+
+	public void setTeacherClass(List<TeacherClass> teacherClass) {
+		this.teacherClass = teacherClass;
+	}
+	
 
 }

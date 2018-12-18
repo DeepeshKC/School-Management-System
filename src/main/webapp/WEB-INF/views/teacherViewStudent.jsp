@@ -38,7 +38,7 @@
 									<th>Email Address</th>
 									<th>Address</th>
 									<th>Contact Number</th>
-									<th>Status</th>
+									<th>Attendance Status</th>
 								</tr>
 
 								<c:forEach var="student" items="${studentsList}">
@@ -50,9 +50,12 @@
 										<td>${student.getEmail()}</td>
 										<td>${student.getAddress()}</td>
 										<td>${student.getContactNo()}</td>
-										<td><a href="/presentStudents?id=${student.getId()}" class="btn btn-success">Present</a></td>
-										<td><a href="/absentStudents?id=${student.getId()}" class="btn btn-danger">Absent</a></td>
-										<td><a href="/lateStudents?id=${student.getId()}" class="btn btn-warning">Late</a></td>
+										<td><a href="/presentStudents?id=${student.getId()}"
+											class="btn btn-success">Present</a>| <a
+											href="/absentStudents?id=${student.getId()}"
+											class="btn btn-danger">Absent</a>|<a
+											href="/lateStudents?id=${student.getId()}"
+											class="btn btn-warning">Late</a></td>
 
 									</tr>
 								</c:forEach>

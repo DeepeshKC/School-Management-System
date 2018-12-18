@@ -44,7 +44,7 @@ public class QuestionPaperController {
 	
 	@RequestMapping(value="view ", method=RequestMethod.GET)
 	public String loadQuestion(Model model, Long id) {
-		model.addAttribute("questionPaperList", questionRepository.question(id));
+		//model.addAttribute("questionPaperList", questionRepository.question(id));
 		return "onlineExam1";
 	}
 

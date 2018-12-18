@@ -40,6 +40,7 @@
 									<th>Contact Number</th>
 									<th>User Type</th>
 									<th>Action</th>
+									<th>Enroll in University</th>
 								</tr>
 
 								<c:forEach var="student" items="${studentsList}">
@@ -52,11 +53,12 @@
 										<td>${student.getAddress()}</td>
 										<td>${student.getContactNo()}</td>
 										<td>${student.getUserType().getUserType()}</td>
-										<td><a
-											href="updateStudents?id=${student.getId()}"
-											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
-											href="deleteStudents?id=${student.getId()}"
+										<td><a href="updateStudents?id=${student.getId()}"
+											class="btn btn-success"><span class="fa fa-edit"></span></a>|
+											<a href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
+										<td><a href="/enrollStudents?id=${student.getId()} & university_id=${university.getUniversityId()}"
+											class="btn btn-primary">Enroll </a></td>
 									</tr>
 								</c:forEach>
 							</thead>

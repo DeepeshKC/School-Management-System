@@ -39,9 +39,9 @@
 										placeholder="Enter assignment deadline" />
 								</div>
 								<div class="form-group">
-									<label>Please Add Assignment File</label>
+									<label>Please Add Assignment File Name</label>
 									<form:input path="assignmentFile" class="form-control"
-										placeholder="Enter assignment file" />
+										placeholder="Enter assignment file name" />
 								</div>
 
 								<button type="submit" class="btn btn-success">Submit</button>

@@ -16,34 +16,36 @@ import com.deepesh.schoolmanagement.app.repository.StudentRepository;
 
 @Controller
 public class StudentClassController {
-	@Autowired private StudentClassRepository studentClassRepository;
-	@Autowired private StudentRepository studentRepository;
-	
+	@Autowired
+	private StudentClassRepository studentClassRepository;
+	@Autowired
+	private StudentRepository studentRepository;
+
 	@ModelAttribute("studentClass")
 	public StudentClass getStudentClass() {
 		return new StudentClass();
 	}
-	
-	@RequestMapping(value="/addStudent", method=RequestMethod.GET)
-	public String loadStudentList(@RequestParam("id")Long id, Model model1, Model model2) {
-	   Classes clas=new Classes();
-	   clas.setClassId(id);
-	   model1.addAttribute("classes", clas);
-	   model2.addAttribute("StudentList", studentRepository.findAll() );
-	   return "addStudentClass";
+
+	@RequestMapping(value = "/addStudent", method = RequestMethod.GET)
+	public String loadStudentList(@RequestParam("id") Long id, Model model1, Model model2) {
+		Classes clas = new Classes();
+		clas.setClassId(id);
+		model1.addAttribute("classes", clas);
+		model2.addAttribute("StudentList", studentRepository.findAll());
+		return "addStudentClass";
 	}
-	
-	@RequestMapping(value="/addStudentClass", method= {RequestMethod.POST,RequestMethod.GET})
-	public String AddStudentToClass(@RequestParam("id")Long id, @RequestParam("class_id")Long class_id) {
-		Student st=new Student();
+
+	@RequestMapping(value = "/addStudentClass", method = { RequestMethod.POST, RequestMethod.GET })
+	public String AddStudentToClass(@RequestParam("id") Long id, @RequestParam("class_id") Long class_id) {
+		Student st = new Student();
 		st.setId(id);
-		Classes clas=new Classes();
+		Classes clas = new Classes();
 		clas.setClassId(class_id);
-		StudentClass stt=new StudentClass();
+		StudentClass stt = new StudentClass();
 		stt.setStudent(st);
 		stt.setClasses(clas);
 		studentClassRepository.save(stt);
-		return "redirect:/addStudent?id="+class_id;
+		return "redirect:/addStudent?id=" + class_id;
 	}
 
 }

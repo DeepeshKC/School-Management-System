@@ -62,6 +62,6 @@ public class StudentController {
 		ur.setUserTypeId(3);
 		student.setUserType(ur);
 		studentRepository.save(student);
-		return "redirect:viewstudents";
+		return "redirect:/viewStudents";
 	}
 }

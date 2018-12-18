@@ -79,6 +79,12 @@
 						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
 								View Class</a></li>
 
+						<li><a href="addUniversities"><i class="fa fa-edit fa-fw"></i>
+								Add University</a></li>
+						<li><a href="viewUniversities"><i
+								class="fa fa-edit fa-fw"></i> View University</a></li>
+
+
 						<li><a href="addExams"><i class="fa fa-edit fa-fw"></i>
 								Add Exam</a></li>
 						<li><a href="viewExams"><i class="fa fa-edit fa-fw"></i>

@@ -36,7 +36,7 @@ public class Student {
 
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "username")
 	private String username;
 
@@ -48,8 +48,12 @@ public class Student {
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
 	private List<Attendance> attendance = new ArrayList<>();
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
 	private List<StudentClass> studentClass = new ArrayList<>();
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
+	private List<UniversityStudent> universityStudent = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -138,5 +142,13 @@ public class Student {
 	public void setStudentClass(List<StudentClass> studentClass) {
 		this.studentClass = studentClass;
 	}
-    
+
+	public List<UniversityStudent> getUniversityStudent() {
+		return universityStudent;
+	}
+
+	public void setUniversityStudent(List<UniversityStudent> universityStudent) {
+		this.universityStudent = universityStudent;
+	}
+
 }

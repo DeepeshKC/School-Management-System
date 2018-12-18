@@ -49,10 +49,14 @@
 									<input class="form-control" placeholder="Password"
 										name="password" type="password" value="">
 								</div>
-								<div class="checkbox">
-									<label> <input name="remember" type="checkbox"
-										value="Remember Me">Remember Me
-									</label>
+								<div class="form-group">
+									<select class="form-control" name="userType">
+										<option value="Student">Student</option>
+										<option value="Admin">Admin</option>
+										<option value="Teacher">Teacher</option>
+										<option value="Parent">Parent</option>
+										<option value="AdministrationStaff">Administration Staff</option>
+									</select>
 								</div>
 								<button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
 							</fieldset>

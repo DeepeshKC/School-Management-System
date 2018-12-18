@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.deepesh.schoolmanagement.app.model.Classes;
 import com.deepesh.schoolmanagement.app.model.Subject;
 import com.deepesh.schoolmanagement.app.repository.SubjectRepository;
 
@@ -29,9 +27,6 @@ public class SubjectController {
 
 	@RequestMapping(value = "add-addSubject", method = RequestMethod.POST)
 	public String addTeacher(@ModelAttribute("subject") Subject subject) {
-		Classes c = new Classes();
-		c.setClassId(1);
-		subject.setClasses(c);
 		subjectRepository.save(subject);
 		return "redirect:/viewSubjects";
 	}

@@ -22,8 +22,7 @@
 						<div class="col-lg-offset-3 col-lg-6">
 							<form:form name="qryform" method="POST"
 								action="update-updateStudent" modelAttribute="student">
-								<form:hidden path="id"
-									value="${student.getId()} }" />
+								<form:hidden path="id" value="${student.getId()}" />
 								<div class="form-group">
 									<label>Please Update first name</label>
 									<form:input path="firstName" class="form-control"
@@ -62,10 +61,6 @@
 									<form:input path="contactNo" class="form-control"
 										value="${student.getContactNo()}" />
 								</div>
-                                 <div class="form-group">
-                                 <label>Select User Type</label>
-                                 <>
-                                 </div>
 								<button type="submit" class="btn btn-default">Update</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							</form:form>

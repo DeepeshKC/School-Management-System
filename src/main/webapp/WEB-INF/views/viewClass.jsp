@@ -34,7 +34,9 @@
 									<th>Class ID</th>
 									<th>Class Name</th>
 									<th>Action</th>
-									<th>Add Student</th>
+									<th>Add Student to Class</th>
+									<th>Add Teacher to Class</th>
+									<th>Add Subject to Class</th>
 								</tr>
 								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
@@ -47,10 +49,13 @@
 												class="fa fa-trash"></span></a></td>
 												
 												<td><a href="/addStudent?id=${classes.getClassId()}"
-											class="btn btn-success"><span class="fa fa-edit"></span></a></td>
+											class="btn btn-primary">Add</a></td>
 					
-												
-												
+										<td><a href="/addTeacher?id=${classes.getClassId()}"
+											class="btn btn-primary">Add</a></td>
+													
+										<td><a href="/addSubject?id=${classes.getClassId()}"
+											class="btn btn-primary">Add</a></td>		
 									</tr>
 								</c:forEach>
 							</thead>

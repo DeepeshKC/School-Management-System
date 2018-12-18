@@ -1,4 +1,6 @@
-package com.deepesh.schoolmanagement.app.repository;
+package com.deepesh.schoolmanagement.app.model;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,6 +24,12 @@ public class UniversityStudent {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private Long id;
+
+	@Column(name = "enroll_date")
+	private Date enrollDate;
+
+	@Column(name = "status")
+	private Boolean status;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "university_id")
@@ -53,6 +61,22 @@ public class UniversityStudent {
 
 	public void setStudent(Student student) {
 		this.student = student;
+	}
+
+	public Date getEnrollDate() {
+		return enrollDate;
+	}
+
+	public void setEnrollDate(Date enrollDate) {
+		this.enrollDate = enrollDate;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 }

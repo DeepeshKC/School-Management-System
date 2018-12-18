@@ -32,26 +32,27 @@
 							<thead>
 								<tr>
 									<th>Student ID</th>
+									<th>Class ID</th>
 									<th>First Name</th>
 									<th>Last Name</th>
 									<th>Username</th>
 									<th>Email Address</th>
 									<th>Address</th>
 									<th>Contact Number</th>
-									<th>User Type</th>
-									<th>Action</th>
+									<th>Add Student to Class</th>
 								</tr>
 
 								<c:forEach var="student" items="${StudentList}">
 									<tr class="odd gradeX">
 										<td>${student.getId()}</td>
+										<td>${student.getClasses().getClassId()}</td>
 										<td>${student.getFirstName()}</td>
 										<td>${student.getLastName()}</td>
 										<td>${student.getUsername()}</td>
 										<td>${student.getEmail()}</td>
 										<td>${student.getAddress()}</td>
 										<td>${student.getContactNo()}</td>
-										<td>${student.getUserType().getUserType()}</td>
+										
 										<td><a
 											href="addStudentClass?id=${student.getId()}&class_id=${classes.getClassId()}"
 											class="btn btn-primary">Add Student</a></td>

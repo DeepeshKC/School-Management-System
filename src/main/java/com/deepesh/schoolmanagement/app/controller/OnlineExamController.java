@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.deepesh.schoolmanagement.app.model.OnlineExam;
+import com.deepesh.schoolmanagement.app.model.QuestionPaper;
 import com.deepesh.schoolmanagement.app.repository.OnlineExamRepository;
+import com.deepesh.schoolmanagement.app.repository.QuestionPaperRepository;
 
 @Controller
 public class OnlineExamController {
 
 	@Autowired private OnlineExamRepository onlineRepository;
+	@Autowired private QuestionPaperRepository qp;
 
 	@ModelAttribute("onlineExam")
 	public OnlineExam onlineExam() {
@@ -39,7 +42,7 @@ public class OnlineExamController {
 	
 	@RequestMapping(value = "online-Exam1", method = RequestMethod.GET)
 	public String onlineExam1(Model model) {
-//		model.addAttribute("onlineExamList", onlineRepository.findAll());
+		model.addAttribute("onlineExamList", qp.findAll());
 		return "onlineExam1";
 	}
 }
