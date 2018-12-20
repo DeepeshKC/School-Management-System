@@ -1,34 +1,43 @@
 package com.deepesh.schoolmanagement.app.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_exam")
 public class Exam {
 	@Id
+	@Column(name = "exam_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private long examId;
+	private Long examId;
 
 	@Column(name = "exam_title")
 	private String examTitle;
-	
-	@Column(name="exam_decription")
+
+	@Column(name = "exam_decription")
 	private String examDescription;
-	
-	@Column(name="exam_date")
+
+	@Column(name = "exam_date")
 	private String examDate;
 
-	public long getExamId() {
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "exam")
+	private List<ExamMarks> examMarks = new ArrayList<>();
+
+	public Long getExamId() {
 		return examId;
 	}
 
-	public void setExamId(long examId) {
+	public void setExamId(Long examId) {
 		this.examId = examId;
 	}
 
@@ -56,6 +65,12 @@ public class Exam {
 		this.examDate = examDate;
 	}
 
-	
+	public List<ExamMarks> getExamMarks() {
+		return examMarks;
+	}
+
+	public void setExamMarks(List<ExamMarks> examMarks) {
+		this.examMarks = examMarks;
+	}
 
 }

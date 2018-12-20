@@ -56,7 +56,7 @@ public class AttendanceController {
 		return "redirect:/teacherViewStudents";
 	}
 
-	@RequestMapping(value = "/absentStudents", method = RequestMethod.POST)
+	@RequestMapping(value = "/absentStudents", method = {RequestMethod.POST, RequestMethod.GET})
 	public String absentStudent(@RequestParam("id") Long id)throws Exception {
 		DateFormat dateFormat= new SimpleDateFormat();
 		Date date=new Date();
@@ -65,12 +65,13 @@ public class AttendanceController {
 		std.setId(id);
 		Attendance att = new Attendance();
 		att.setStudent(std);
+		att.setDate(date1);
 		att.setStatus("Absent");
 		attendanceRepository.save(att);
-		return "redirect:/teacherViewStudent";
+		return "redirect:/teacherViewStudents";
 	}
 
-	@RequestMapping(value = "/lateStudents", method = RequestMethod.POST)
+	@RequestMapping(value = "/lateStudents", method = {RequestMethod.POST, RequestMethod.GET})
 	public String lateStudent(@RequestParam("id") Long id) throws Exception{
 		DateFormat dateFormat= new SimpleDateFormat();
 		Date date=new Date();
@@ -79,9 +80,10 @@ public class AttendanceController {
 		std.setId(id);
 		Attendance att = new Attendance();
 		att.setStudent(std);
+		att.setDate(date1);
 		att.setStatus("Late Arrival");
 		attendanceRepository.save(att);
-		return "redirect:/teacherViewStudent";
+		return "redirect:/teacherViewStudents";
 	}
 
 }

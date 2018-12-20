@@ -1,5 +1,6 @@
 package com.deepesh.schoolmanagement.app.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,6 +26,7 @@ public class Subject {
 	@JoinColumn(name = "class_id")
 	public Classes classes;
 
+	
 	public Long getSubjectId() {
 		return subjectId;
 	}
@@ -48,5 +50,7 @@ public class Subject {
 	public void setClasses(Classes classes) {
 		this.classes = classes;
 	}
+
+
 
 }

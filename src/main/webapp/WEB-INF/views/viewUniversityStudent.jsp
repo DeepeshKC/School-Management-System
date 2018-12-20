@@ -56,12 +56,13 @@
 										<td>${student.getEmail()}</td>
 										<td>${student.getAddress()}</td>
 										<td>${student.getContactNo()}</td>
-										<td>${student.getUniversityStudent().getEnrollDate()}</td>
-										<td>${student.getUniversityStudent().getStatus()}</td>
 										<td><a href="updateStudents?id=${student.getId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|
 											<a href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
+									
+									<td><a href="viewUniversityStudent?id=${student.getId()}&university_id=${university.getUniversityId()}"
+											class="btn btn-primary">Enroll</a></td>
 									</tr>
 								</c:forEach>
 							</thead>

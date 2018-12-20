@@ -1,5 +1,10 @@
 package com.deepesh.schoolmanagement.app.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,16 +34,19 @@ public class UniversityStudentController {
 
 	@RequestMapping(value = "/enrollStudents", method = RequestMethod.GET)
 	public String loadStudentList(@RequestParam("id") Long id, Model model1, Model model2) {
-		University uni = new University();
-		uni.setUniversityId(id);
-		model1.addAttribute("university", uni);
-		model2.addAttribute("StudentList", studentRepository.findAll());
-		return "addUniversityStudent";
+		University u = new University();
+		u.setUniversityId(id);
+		model1.addAttribute("university", u);
+		model2.addAttribute("studentsList", studentRepository.findAll());
+		return "viewUniversityStudent";
 	}
 
-	@RequestMapping(value = "/addUniversityStudent", method = { RequestMethod.POST, RequestMethod.GET })
-	public String addUniversityStudent(@RequestParam("id") Long id,
-			@RequestParam("university_id") Long university_id) {
+	@RequestMapping(value = "/viewUniversityStudent", method = { RequestMethod.POST, RequestMethod.GET })
+	public String addUniversityStudent(@RequestParam("id") Long id, @RequestParam("university_id") Long university_id)
+			throws Exception {
+		DateFormat dateFormat = new SimpleDateFormat();
+		Date date = new Date();
+		Date date1 = dateFormat.parse(dateFormat.format(date));
 		Student s = new Student();
 		s.setId(university_id);
 		University uni = new University();
@@ -46,7 +54,24 @@ public class UniversityStudentController {
 		UniversityStudent us = new UniversityStudent();
 		us.setUniversity(uni);
 		us.setStudent(s);
+		us.setEnrollDate(date1);
+		us.setStatus(true);
 		universityStudentRepository.save(us);
 		return "redirect:/enrollStudents?id=" + university_id;
+	}
+	
+	@RequestMapping(value="/updateUniversityStudents", method = RequestMethod.GET)
+	public String loadUpdateForm(@RequestParam("id") Long id, Model model) {
+		Optional<UniversityStudent> universityStudent= universityStudentRepository.findById(id);
+		UniversityStudent us= universityStudent.get();
+		model.addAttribute("universityStudent", us);
+		return "updateUniversityStudent";
+	}
+	
+	@RequestMapping(value="update-updateUiversityStudent", method= RequestMethod. POST)
+	public String updateUniversityStudent(@ModelAttribute("universityStudent") UniversityStudent universityStudent) {
+		//universityStudentRepository.save();
+		return "redirect:/viewUniversityStudents";
+		
 	}
 }

@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View University</title>
+<title>View Class</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">University</h1>
+				<h1 class="page-header">Class</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,42 +22,38 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">University Details</div>
+					<div class="panel-heading">Class Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
 							id="dataTables-example">
 							<thead>
+							<thead>
 								<tr>
-									<th>University ID</th>
-									<th>University Name</th>
-									<th>Address</th>
-									<th>Enroll in University</th>
-
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="university" items="${universityList}">
-
-									<tr class="odd gradeX">
-										<td>${university.getUniversityId()}</td>
-										<td>${university.getName()}</td>
-										<td><a
-											href="delete-deleteUniversity?id=${university.getUniversityId()}"
-											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
+									<th>Class ID</th>
+									<th>Class Name</th>
 									
-									<td><a href="/enrollStudents?id=${university.getUniversityId()}"
-											class="btn btn-primary">Enroll Students </a></td>
+									<th>Add Marks to Student</th>
+									
+								</tr>
+								<c:forEach var="classes" items="${classList}">
+									<tr class="odd gradeX">
+									<tr class="odd gradeX">
+										<td>${classes.getClassId()}</td>
+										<td>${classes.getClassName()}</td>
+										<td><a href="addMarks?id=${classes.getClassId()}"
+											class="btn btn-primary">Add</a>
+												
+													
 									</tr>
 								</c:forEach>
-							</tbody>
+							</thead>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

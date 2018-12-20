@@ -32,9 +32,6 @@
 							<thead>
 								<tr>
 									<th>Student ID</th>
-									<th>Class ID</th>
-									<th>University ID</th>
-									<th>Enroll Date</th>
 									<th>First Name</th>
 									<th>Last Name</th>
 									<th>Username</th>
@@ -42,15 +39,12 @@
 									<th>Address</th>
 									<th>Contact Number</th>
 									<th>User Type</th>
-									<th>Status</th>
-									<th>Enroll to University</th>
+									<th>Add marks</th>
 								</tr>
 
-								<c:forEach var="student" items="${StudentList}">
+								<c:forEach var="student" items="${studentList}">
 									<tr class="odd gradeX">
 										<td>${student.getId()}</td>
-										<td>${classes.getClassId()}</td> 
-										<td>${student.getUniversity.getUniversityId()}</td>
 										<td>${student.getFirstName()}</td>
 										<td>${student.getLastName()}</td>
 										<td>${student.getUsername()}</td>
@@ -58,10 +52,11 @@
 										<td>${student.getAddress()}</td>
 										<td>${student.getContactNo()}</td>
 										<td>${student.getUserType().getUserType()}</td>
-										<td><a
-											href="addUniversityStudent?id=${student.getId()}&university_id=${university.getUniversityId()}"
-											class="btn btn-primary">Enroll</a></td>
-
+										
+									
+									<td><a href="addStudentMarks?id=${student.getId()}&class_id=${class_id}"
+											class="btn btn-primary">Add</a></td>
+									
 									</tr>
 								</c:forEach>
 							</thead>

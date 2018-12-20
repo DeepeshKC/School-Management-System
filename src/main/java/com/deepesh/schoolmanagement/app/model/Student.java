@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -46,14 +47,27 @@ public class Student {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private UserType userType;
 
+	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "university_id")
+	public University university;
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
 	private List<Attendance> attendance = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
-	private List<StudentClass> studentClass = new ArrayList<>();
+	private List<UniversityStudent> universityStudent = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
-	private List<UniversityStudent> universityStudent = new ArrayList<>();
+	private List<ExamMarks> examMarks = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
+	private List<StudentClass> studentClass = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
+	private List<Student> student = new ArrayList<>();
+	
 
 	public Long getId() {
 		return id;
@@ -135,6 +149,30 @@ public class Student {
 		this.attendance = attendance;
 	}
 
+	public List<UniversityStudent> getUniversityStudent() {
+		return universityStudent;
+	}
+
+	public void setUniversityStudent(List<UniversityStudent> universityStudent) {
+		this.universityStudent = universityStudent;
+	}
+
+	public University getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(University university) {
+		this.university = university;
+	}
+
+	public List<ExamMarks> getExamMarks() {
+		return examMarks;
+	}
+
+	public void setExamMarks(List<ExamMarks> examMarks) {
+		this.examMarks = examMarks;
+	}
+
 	public List<StudentClass> getStudentClass() {
 		return studentClass;
 	}
@@ -143,12 +181,12 @@ public class Student {
 		this.studentClass = studentClass;
 	}
 
-	public List<UniversityStudent> getUniversityStudent() {
-		return universityStudent;
+	public List<Student> getStudent() {
+		return student;
 	}
 
-	public void setUniversityStudent(List<UniversityStudent> universityStudent) {
-		this.universityStudent = universityStudent;
+	public void setStudent(List<Student> student) {
+		this.student = student;
 	}
 
 }

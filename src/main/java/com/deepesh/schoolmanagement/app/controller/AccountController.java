@@ -32,9 +32,9 @@ public class AccountController {
 				return "redirect:/login";
 			}
 		} else if (login.getUserType().equals("Admin")) {
-			Admin student=accountRepository.loginAdmin(login.getUsername(), login.getPassword());
+			Admin admin=accountRepository.loginAdmin(login.getUsername(), login.getPassword());
 			
-			if(student!=null) {
+			if(admin!=null) {
 				System.out.println("logged in");
 				return "adminDashboard";
 			} 
@@ -42,9 +42,9 @@ public class AccountController {
 				return "redirect:/login";
 			}
 		} else if (login.getUserType().equals("Teacher")) {
-			Teacher student=accountRepository.loginTeacher(login.getUsername(), login.getPassword());
+			Teacher teacher=accountRepository.loginTeacher(login.getUsername(), login.getPassword());
 			
-			if(student!=null) {
+			if(teacher!=null) {
 				System.out.println("logged in");
 				return "studentDasboard";
 			} 
@@ -52,9 +52,9 @@ public class AccountController {
 				return "redirect:/login";
 			}
 		} else if (login.getUserType().equals("Parent")) {
-			Parent student=accountRepository.loginParent(login.getUsername(), login.getPassword());
+			Parent parent=accountRepository.loginParent(login.getUsername(), login.getPassword());
 			
-			if(student!=null) {
+			if(parent!=null) {
 				System.out.println("logged in");
 				return "studentDasboard";
 			} 
@@ -62,9 +62,9 @@ public class AccountController {
 				return "redirect:/login";
 			}
 		} else if (login.getUserType().equals("AdministrationStaff")) {
-			AdministrativeStaff student=accountRepository.loginAdministrativeStaff(login.getUsername(), login.getPassword());
+			AdministrativeStaff as=accountRepository.loginAdministrativeStaff(login.getUsername(), login.getPassword());
 			
-			if(student!=null) {
+			if(as!=null) {
 				System.out.println("logged in");
 				return "studentDasboard";
 			} 

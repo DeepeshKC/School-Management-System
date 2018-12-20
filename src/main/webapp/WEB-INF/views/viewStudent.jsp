@@ -40,7 +40,8 @@
 									<th>Contact Number</th>
 									<th>User Type</th>
 									<th>Action</th>
-									<th>Enroll in University</th>
+									<th>Link Parents</th>
+									<th>Add marks</th>
 								</tr>
 
 								<c:forEach var="student" items="${studentsList}">
@@ -57,8 +58,10 @@
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|
 											<a href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
-										<td><a href="/enrollStudents?id=${student.getId()} & university_id=${university.getUniversityId()}"
-											class="btn btn-primary">Enroll </a></td>
+									
+									<td><a href="/linkParents?id=${student.getId()}"
+											class="btn btn-primary">Add</a></td>
+									
 									</tr>
 								</c:forEach>
 							</thead>

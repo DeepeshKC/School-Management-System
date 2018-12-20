@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.deepesh.schoolmanagement.app.model.Student;
 import com.deepesh.schoolmanagement.app.model.University;
@@ -25,11 +27,12 @@ public class UniversityStudent {
 
 	private Long id;
 
-	@Column(name = "enroll_date")
-	private Date enrollDate;
-
 	@Column(name = "status")
 	private Boolean status;
+
+	@Column(name = "enroll_date")
+	@Temporal(TemporalType.DATE)
+	private Date enrollDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "university_id")
@@ -45,6 +48,14 @@ public class UniversityStudent {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 	public University getUniversity() {
@@ -69,14 +80,6 @@ public class UniversityStudent {
 
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
-	}
-
-	public Boolean getStatus() {
-		return status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
 	}
 
 }

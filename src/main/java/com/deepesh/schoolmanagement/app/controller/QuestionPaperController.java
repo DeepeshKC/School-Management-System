@@ -30,7 +30,7 @@ public class QuestionPaperController {
 	@RequestMapping(value = "add-addQuestion", method = RequestMethod.POST)
 	public String addQuestion(@ModelAttribute("questionPaper") QuestionPaper questionPaper) {
 		Classes c = new Classes();
-		c.setClassId(1);
+		//c.setClassId(1);
 		questionPaper.setClasses1(c);
 		questionRepository.save(questionPaper);
 		return "redirect:/viewQuestionPapers";

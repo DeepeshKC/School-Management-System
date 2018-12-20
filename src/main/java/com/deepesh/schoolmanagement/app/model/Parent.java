@@ -14,6 +14,7 @@ import javax.persistence.Table;
 @Table(name = "tbl_parent")
 public class Parent {
 	@Id
+	@Column(name="parent_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long parentId;
 
@@ -41,9 +42,16 @@ public class Parent {
 	@Column(name = "profession")
 	private String profession;
 
+	@Column(name = "relationship")
+	private String relationship;
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userType_id")
 	public UserType userType;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "student_id")
+	public Student student;
 
 	public Long getParentId() {
 		return parentId;
@@ -123,6 +131,22 @@ public class Parent {
 
 	public void setUserType(UserType userType) {
 		this.userType = userType;
+	}
+
+	public String getRelationship() {
+		return relationship;
+	}
+
+	public void setRelationship(String relationship) {
+		this.relationship = relationship;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 
 }

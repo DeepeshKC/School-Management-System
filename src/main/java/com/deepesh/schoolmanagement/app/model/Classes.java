@@ -16,31 +16,36 @@ import javax.persistence.Table;
 @Table(name = "tbl_class")
 public class Classes {
 	@Id
-	@Column(name="class_id")
+	@Column(name = "class_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long classId;
-	
-	
+	private Long classId;
+
 	@Column(name = "class_name")
 	private String className;
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
 	private List<Subject> subject = new ArrayList<>();
-	
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
+	private List<Teacher> teacher = new ArrayList<>();
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes1")
 	private List<QuestionPaper> questionpaper = new ArrayList<>();
-	
+
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
-	private List<StudentClass> studentClass1 = new ArrayList<>();
+	private List<StudentClass> studentClass = new ArrayList<>();
 
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
 	private List<TeacherClass> teacherClass = new ArrayList<>();
-	
-	public long getClassId() {
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "class1")
+	private List<ExamMarks> examMarks = new ArrayList<>();
+
+	public Long getClassId() {
 		return classId;
 	}
 
-	public void setClassId(long classId) {
+	public void setClassId(Long classId) {
 		this.classId = classId;
 	}
 
@@ -69,11 +74,7 @@ public class Classes {
 	}
 
 	public List<StudentClass> getStudentClass1() {
-		return studentClass1;
-	}
-
-	public void setStudentClass1(List<StudentClass> studentClass1) {
-		this.studentClass1 = studentClass1;
+		return studentClass;
 	}
 
 	public List<TeacherClass> getTeacherClass() {
@@ -83,7 +84,21 @@ public class Classes {
 	public void setTeacherClass(List<TeacherClass> teacherClass) {
 		this.teacherClass = teacherClass;
 	}
-	
 
-	
+	public List<Teacher> getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(List<Teacher> teacher) {
+		this.teacher = teacher;
+	}
+
+	public List<ExamMarks> getExamMarks() {
+		return examMarks;
+	}
+
+	public void setExamMarks(List<ExamMarks> examMarks) {
+		this.examMarks = examMarks;
+	}
+
 }

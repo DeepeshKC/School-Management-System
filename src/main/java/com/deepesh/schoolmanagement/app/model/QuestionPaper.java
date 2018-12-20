@@ -58,14 +58,6 @@ public class QuestionPaper {
 		this.questionPaperName = questionPaperName;
 	}
 
-	public Classes getClasses1() {
-		return classes1;
-	}
-
-	public void setClasses1(Classes classes1) {
-		this.classes1 = classes1;
-	}
-
 	public String getQuestion1() {
 		return question1;
 	}
@@ -112,6 +104,14 @@ public class QuestionPaper {
 
 	public void setRightAnswer(String rightAnswer) {
 		this.rightAnswer = rightAnswer;
+	}
+
+	public Classes getClasses1() {
+		return classes1;
+	}
+
+	public void setClasses1(Classes classes1) {
+		this.classes1 = classes1;
 	}
 
 }

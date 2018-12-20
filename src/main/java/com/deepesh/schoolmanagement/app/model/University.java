@@ -31,7 +31,10 @@ public class University {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "university")
 	private List<UniversityStudent> universityStudent = new ArrayList<>();
 	
-
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "university")
+	private List<Student> student = new ArrayList<>();
+	
+	
 	public Long getUniversityId() {
 		return universityId;
 	}
@@ -62,6 +65,14 @@ public class University {
 
 	public void setUniversityStudent(List<UniversityStudent> universityStudent) {
 		this.universityStudent = universityStudent;
+	}
+
+	public List<Student> getStudent() {
+		return student;
+	}
+
+	public void setStudent(List<Student> student) {
+		this.student = student;
 	}
 
 }
