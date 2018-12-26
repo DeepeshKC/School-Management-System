@@ -38,6 +38,12 @@ public class ExamController {
 		model.addAttribute("examList", examRepository.findAll());
 		return "viewExam";
 	}
+	@RequestMapping(value = "**/parent/viewExams", method = RequestMethod.GET)
+	public String pa_viewExam(@RequestParam("id")Long id, Model model, Model model1) {
+		model.addAttribute("examList", examRepository.findAll());
+		model1.addAttribute("student", id);
+		return "parentViewExam";
+	}
 
 	@RequestMapping(value = "deleteExam", method = RequestMethod.GET)
 	public String deleteExam(@RequestParam("id") Long id) {

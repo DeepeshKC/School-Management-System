@@ -47,8 +47,6 @@ public class Student {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private UserType userType;
 
-	
-
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "university_id")
 	public University university;
@@ -66,7 +64,7 @@ public class Student {
 	private List<StudentClass> studentClass = new ArrayList<>();
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "student")
-	private List<Student> student = new ArrayList<>();
+	private List<Parent> parent = new ArrayList<>();
 	
 
 	public Long getId() {
@@ -181,12 +179,12 @@ public class Student {
 		this.studentClass = studentClass;
 	}
 
-	public List<Student> getStudent() {
-		return student;
+	public List<Parent> getParent() {
+		return parent;
 	}
 
-	public void setStudent(List<Student> student) {
-		this.student = student;
+	public void setParent(List<Parent> parent) {
+		this.parent = parent;
 	}
 
 }

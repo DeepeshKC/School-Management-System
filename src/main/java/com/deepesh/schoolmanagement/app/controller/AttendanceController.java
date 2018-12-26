@@ -86,4 +86,8 @@ public class AttendanceController {
 		return "redirect:/teacherViewStudents";
 	}
 
+		/*@RequestMapping(value="/viewStudentAttendance", method= RequestMethod.GET)
+		public String viewStudentAttendance() {
+			return "ff";
+		}*/
 }

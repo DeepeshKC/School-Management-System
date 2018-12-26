@@ -11,7 +11,7 @@
 <title>Add Question Paper</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="teacherHeader.jsp" />
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">

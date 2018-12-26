@@ -3,7 +3,6 @@ package com.deepesh.schoolmanagement.app.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -61,13 +60,19 @@ public class ExamMarksController {
 	@RequestMapping(value = "add-addMarks", method = RequestMethod.POST)
 	public String addMarks(@ModelAttribute("examMarks") ExamMarks examMarks) {
 		examMarksRepository.save(examMarks);
-		return "redirect:viewStudentMark";
+		return "redirect:/viewStudentMark";
 	}
 
 	@RequestMapping(value = "viewStudentMark", method = RequestMethod.GET)
 	public String viewStudentMarks(Model model) {
 		model.addAttribute("examMarksList", examMarksRepository.findAll());
 		return "viewStudentMarks";
+
+	}
+	@RequestMapping(value = "**/parent/viewMarks", method = RequestMethod.GET)
+	public String parent_viewStudentMarks(@RequestParam("id")Long exam_id, @RequestParam("student_id")Long student_id,Model model) {
+		model.addAttribute("examMarksList", examMarksRepository.findByStudentAndClass(exam_id, student_id));
+		return "parentStudentMarks";
 
 	}
 	

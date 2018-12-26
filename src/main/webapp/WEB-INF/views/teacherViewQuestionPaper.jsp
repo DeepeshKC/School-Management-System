@@ -10,7 +10,7 @@
 <title>Question Paper</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="teacherHeader.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">

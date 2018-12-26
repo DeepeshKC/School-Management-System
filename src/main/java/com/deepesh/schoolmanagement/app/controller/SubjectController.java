@@ -36,6 +36,8 @@ public class SubjectController {
 		model.addAttribute("subjectList", subjectRepository.findAll());
 		return "viewSubject";
 	}
+	
+	
 
 	@RequestMapping(value = "delete-deleteSubject", method = RequestMethod.GET)
 	public String deleteSubject(@RequestParam("id") Long id) {

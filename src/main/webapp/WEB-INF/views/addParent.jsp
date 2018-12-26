@@ -67,6 +67,13 @@
 									<form:input path="profession" class="form-control"
 										placeholder="Enter Profession" />
 								</div>
+								
+								
+								<div class="form-group">
+									<label>Please state Relationship to student</label>
+									<form:input path="relationship" class="form-control"
+										placeholder="Enter Relationship" />
+								</div>
 								<button type="submit" class="btn btn-default">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							</form:form>

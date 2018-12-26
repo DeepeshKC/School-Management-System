@@ -61,8 +61,8 @@
 										placeholder="Enter Contact Number" />
 								</div>
 
-								<button type="submit" class="btn btn-default">Submit</button>
-								<button type="reset" class="btn btn-default">Reset</button>
+								<button type="submit" class="btn btn-success">Submit</button>
+								<button type="reset" class="btn btn-warning">Reset</button>
 							</form:form>
 						</div>
 					</div>

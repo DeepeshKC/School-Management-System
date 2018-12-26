@@ -10,7 +10,7 @@
 <title>View Class</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="teacherHeader.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
@@ -33,7 +33,9 @@
 								<tr>
 									<th>Class ID</th>
 									<th>Class Name</th>
-									<th>Action</th>
+									<th>View Students</th>
+									<th>View Routine</th>
+									<th>Add Assignment</th>
 								</tr>
 								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
@@ -43,6 +45,12 @@
 										<td><a
 											href="/teacherViewStudents?id=${classes.getClassId()}"
 											class="btn btn-success">View Students </a></td>
+										<td><a href="/viewRoutineClass?id=${classes.getClassId()}"
+											class="btn btn-primary">Routine</a></td>
+											<td><a href="teacher/addAssignments?id=${classes.getClassId()}"
+											class="btn btn-success">Add</a></td>
+											
+											
 									</tr>
 								</c:forEach>
 							</thead>

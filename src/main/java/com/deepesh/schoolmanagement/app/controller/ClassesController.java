@@ -32,7 +32,15 @@ public class ClassesController {
 		return "redirect:/viewClasses";
 	}
 
-	@RequestMapping(value = "**/viewClasses", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "**/teacher/viewClasses", method = RequestMethod.GET)
+	public String teacher_viewClass(Model model) {
+		model.addAttribute("classList", classRepository.findAll());
+		return "teacherViewClass";
+	}
+	
+	
+	@RequestMapping(value = "/viewClasses", method = RequestMethod.GET)
 	public String viewClass(Model model) {
 		model.addAttribute("classList", classRepository.findAll());
 		return "viewClass";

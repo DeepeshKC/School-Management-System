@@ -1,6 +1,9 @@
 package com.deepesh.schoolmanagement.app.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,7 +30,9 @@ public class Subject {
 	@JoinColumn(name = "class_id")
 	public Classes classes;
 
-	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
+	private List<Routine> routine = new ArrayList<>();
+
 	public Long getSubjectId() {
 		return subjectId;
 	}
@@ -51,6 +57,12 @@ public class Subject {
 		this.classes = classes;
 	}
 
+	public List<Routine> getRoutine() {
+		return routine;
+	}
 
+	public void setRoutine(List<Routine> routine) {
+		this.routine = routine;
+	}
 
 }

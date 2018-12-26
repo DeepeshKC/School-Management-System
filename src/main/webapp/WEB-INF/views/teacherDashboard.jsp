@@ -25,7 +25,7 @@
     <link href="css/sb-admin.css" rel="stylesheet">
 </head>
 <body id="page-top">
-<jsp:include page="header.jsp"/>
+<jsp:include page="teacherHeader.jsp"/>
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">

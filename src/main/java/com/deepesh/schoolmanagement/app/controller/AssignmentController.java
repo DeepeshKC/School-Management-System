@@ -21,22 +21,22 @@ public class AssignmentController {
 		return new Assignment();
 	}
 
-	@RequestMapping(value = "/addAssignments", method = RequestMethod.GET)
+	@RequestMapping(value = "**/teacher/addAssignments", method = RequestMethod.GET)
 	public String loadAddAssignments() {
-		return "addAssignment";
+		return "teacherAddAssignment";
 	}
 
-	@RequestMapping(value = "add-addAssignments", method = RequestMethod.POST)
+	@RequestMapping(value = "**/teacher/add-addAssignments", method = RequestMethod.POST)
 	public String addAssignments(@ModelAttribute("assignment") Assignment assignment) {
 		assignmentRepository.save(assignment);
 		return "redirect:/viewAssignments";
 
 	}
 
-	@RequestMapping(value = "viewAssignments", method = RequestMethod.GET)
+	@RequestMapping(value = "**/teacher/viewAssignments", method = RequestMethod.GET)
 	public String viewAssignments(Model model) {
 		model.addAttribute("assignmentList", assignmentRepository.findAll());
-		return "viewAssignment";
+		return "teacherViewAssignment";
 	}
 
 	@RequestMapping(value = "delete-deleteAssignment", method = RequestMethod.GET)

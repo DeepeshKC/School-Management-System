@@ -42,6 +42,7 @@
 									<th>Action</th>
 									<th>Link Parents</th>
 									<th>Add marks</th>
+									<th>View Attendance</th>
 								</tr>
 
 								<c:forEach var="student" items="${studentsList}">
@@ -58,10 +59,14 @@
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|
 											<a href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
-									
-									<td><a href="/linkParents?id=${student.getId()}"
+
+										<td><a href="/linkParents?id=${student.getId()}"
 											class="btn btn-primary">Add</a></td>
-									
+
+										<td><a
+											href="/viewStudentAttendance?id=${student.getId()}"
+											class="btn btn-primary">View </a></td>
+
 									</tr>
 								</c:forEach>
 							</thead>

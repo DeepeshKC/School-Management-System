@@ -2,6 +2,7 @@ package com.deepesh.schoolmanagement.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,20 +13,24 @@ import com.deepesh.schoolmanagement.app.model.Parent;
 import com.deepesh.schoolmanagement.app.model.Student;
 import com.deepesh.schoolmanagement.app.model.Teacher;
 import com.deepesh.schoolmanagement.app.repository.AccountRepository;
+import com.deepesh.schoolmanagement.app.repository.StudentRepository;
+import com.deepesh.schoolmanagement.app.repository.SubjectClassRepository;
 
 @Controller
 public class AccountController {
 
 	@Autowired private AccountRepository accountRepository;
+	@Autowired private StudentRepository studentRepository;
 	
 	@RequestMapping(value="/studentLogin", method= RequestMethod.POST )
-	public String loginStudent(Login login) {
+	public String loginStudent(Login login, Model model) {
 		System.out.println(login.getUserType());
 		if (login.getUserType().equals("Student")) {
 			Student student=accountRepository.loginStudent(login.getUsername(), login.getPassword());
 			
 			if(student!=null) {
 				System.out.println("logged in");
+				
 				return "studentDasboard";
 			} 
 			else{
@@ -46,7 +51,7 @@ public class AccountController {
 			
 			if(teacher!=null) {
 				System.out.println("logged in");
-				return "studentDasboard";
+				return "teacherDashboard";
 			} 
 			else{
 				return "redirect:/login";
@@ -55,8 +60,10 @@ public class AccountController {
 			Parent parent=accountRepository.loginParent(login.getUsername(), login.getPassword());
 			
 			if(parent!=null) {
-				System.out.println("logged in");
-				return "studentDasboard";
+				System.out.println(parent.getParentId());
+				//model.addAttribute("subjectList",subject.getSubjectByStudent(parent.getParentId()));
+				model.addAttribute("studentList", studentRepository.getStudentbyParent(parent.getParentId()));
+				return "parentDashboard";
 			} 
 			else{
 				return "redirect:/login";

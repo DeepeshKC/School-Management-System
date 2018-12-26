@@ -41,6 +41,8 @@ public class Classes {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "class1")
 	private List<ExamMarks> examMarks = new ArrayList<>();
 
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "classes")
+	private List<Assignment> assignment = new ArrayList<>();
 	public Long getClassId() {
 		return classId;
 	}
@@ -99,6 +101,22 @@ public class Classes {
 
 	public void setExamMarks(List<ExamMarks> examMarks) {
 		this.examMarks = examMarks;
+	}
+
+	public List<StudentClass> getStudentClass() {
+		return studentClass;
+	}
+
+	public void setStudentClass(List<StudentClass> studentClass) {
+		this.studentClass = studentClass;
+	}
+
+	public List<Assignment> getAssignment() {
+		return assignment;
+	}
+
+	public void setAssignment(List<Assignment> assignment) {
+		this.assignment = assignment;
 	}
 
 }

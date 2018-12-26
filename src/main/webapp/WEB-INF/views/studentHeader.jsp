@@ -1,12 +1,106 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>School Management System</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="../vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div id="wrapper">
 
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">School Management
+					System</a>
+			</div>
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div> <!-- /input-group -->
+						</li>
+						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
+								Dashboard</a></li>
+
+						<li><a href="calendar"><i class="fas fa-calendar-alt"></i>
+								Calendar</a></li>
+
+						
+						
+						
+						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
+								View Class</a></li>
+								
+								
+							
+						<li><a href="viewRoutines"><i class="fa fa-edit fa-fw"></i>
+								View Routine</a></li>
+								
+						
+
+						<li><a href="addOnlineExams"><i class="fa fa-edit fa-fw"></i>
+								Add Online Examination</a></li>
+
+						<li><a href="online-Exam"><i class="fa fa-edit fa-fw"></i>
+								Online Examination</a></li>
+
+						<li><a href="online-Exam1"><i class="fa fa-edit fa-fw"></i>
+								Online Examination1</a></li>
+
+						<li><a href="viewSubjects"><i class="fa fa-edit fa-fw"></i>
+								View Subject</a></li>
+
+						<li><a href="viewAssignments"><i class="fa fa-edit fa-fw"></i>
+								View Assignments</a></li>
+
+						
+						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
+								View Attendance</a></li>
+
+					
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
 </body>
 </html>

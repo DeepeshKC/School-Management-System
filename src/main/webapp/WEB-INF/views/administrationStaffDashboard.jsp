@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Administration Staff Dashboard</title>
 </head>
+<jsp:include page="header.jsp"/>
 <body>
 
 </body>

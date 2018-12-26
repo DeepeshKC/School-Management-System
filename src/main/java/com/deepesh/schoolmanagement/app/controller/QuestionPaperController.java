@@ -22,9 +22,9 @@ public class QuestionPaperController {
 		return new QuestionPaper();
 	}
 
-	@RequestMapping(value = "/addQuestionPapers", method = RequestMethod.GET)
+	@RequestMapping(value = "**/teacher/addQuestionPapers", method = RequestMethod.GET)
 	public String loadAddQuestionPage() {
-		return "addQuestionPaper";
+		return "teacherAddQuestionPaper";
 	}
 
 	@RequestMapping(value = "add-addQuestion", method = RequestMethod.POST)
@@ -36,10 +36,10 @@ public class QuestionPaperController {
 		return "redirect:/viewQuestionPapers";
 	}
 
-	@RequestMapping(value = "viewQuestionPapers", method = RequestMethod.GET)
+	@RequestMapping(value = "**/teacher/viewQuestionPapers", method = RequestMethod.GET)
 	public String viewQuestion(Model model) {
 		model.addAttribute("questionPaperList", questionRepository.findAll());
-		return "viewQuestionPaper";
+		return "teacherViewQuestionPaper";
 	}
 	
 	@RequestMapping(value="view ", method=RequestMethod.GET)

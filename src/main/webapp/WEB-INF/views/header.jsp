@@ -68,16 +68,22 @@
 						<li><a href="viewUserTypes"><i class="fa fa-edit fa-fw"></i>
 								View UserType</a></li>
 
-						<li><a href="#"><i class="fas fa-chalkboard-teacher"></i>
-								Charts<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="flot.html">Flot Charts</a></li>
-								<li><a href="morris.html">Morris.js Charts</a></li>
-							</ul>
+						
 						<li><a href="addClasses"><i class="fa fa-edit fa-fw"></i>
 								Add Class</a></li>
 						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
 								View Class</a></li>
+								
+								
+								<li><a href="addRoutines"><i class="fa fa-edit fa-fw"></i>
+								Add Routine</a></li>
+						<li><a href="viewRoutines"><i class="fa fa-edit fa-fw"></i>
+								View Routine</a></li>
+								
+								<li><a href="addExamMark"><i class="fa fa-edit fa-fw"></i>
+								Add Exam Mark</a></li>
+						<li><a href="addMarks"><i class="fa fa-edit fa-fw"></i>
+								Add mark</a></li>
 
 						<li><a href="addUniversities"><i class="fa fa-edit fa-fw"></i>
 								Add University</a></li>

@@ -37,6 +37,7 @@
 									<th>Add Student to Class</th>
 									<th>Add Teacher to Class</th>
 									<th>Add Subject to Class</th>
+									<th>View Routine</th>
 								</tr>
 								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
@@ -55,7 +56,10 @@
 											class="btn btn-primary">Add</a></td>
 													
 										<td><a href="/addSubject?id=${classes.getClassId()}"
-											class="btn btn-primary">Add</a></td>		
+											class="btn btn-primary">Add</a></td>
+											
+									<td><a href="/viewRoutineClass?id=${classes.getClassId()}"
+											class="btn btn-primary">View</a></td>		
 									</tr>
 								</c:forEach>
 							</thead>

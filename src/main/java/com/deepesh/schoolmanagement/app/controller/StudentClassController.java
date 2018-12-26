@@ -47,27 +47,24 @@ public class StudentClassController {
 		studentClassRepository.save(stt);
 		return "redirect:/addStudent?id=" + class_id;
 	}
-	
-	
-	@RequestMapping(value = "/promoteStudent", method =RequestMethod.GET )
-	public String PromoteStudent(@RequestParam("id")Long id, @RequestParam("student_id")Long student_id)
-	{
-		
-		Student student=new Student();
+
+	@RequestMapping(value = "/promoteStudent", method = RequestMethod.GET)
+	public String PromoteStudent(@RequestParam("id") Long id, @RequestParam("student_id") Long student_id) {
+
+		Student student = new Student();
 		student.setId(student_id);
-		
-		
-		Classes classes=new Classes();
-		classes.setClassId(id+1);
-		StudentClass st=studentClassRepository.getIdByStudentandClass(id, student_id);
-		Long idd=st.getId();
-		StudentClass stt=new StudentClass();
+
+		Classes classes = new Classes();
+		classes.setClassId(id + 1);
+		StudentClass st = studentClassRepository.getIdByStudentandClass(id, student_id);
+		Long idd = st.getId();
+		StudentClass stt = new StudentClass();
 		stt.setId(idd);
 		stt.setStudent(student);
 		stt.setClasses(classes);
 		studentClassRepository.save(stt);
-		
-		return "redirect:/viewClassLedgerDefault?class_id="+id;
 
-}
+		return "redirect:/viewClassLedgerDefault?class_id=" + id;
+
+	}
 }
