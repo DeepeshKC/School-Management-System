@@ -12,19 +12,19 @@
 <title>School Management System</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- MetisMenu CSS -->
-<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+<link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="/dist/css/sb-admin-2.css" rel="stylesheet">
 
 <!-- Morris Charts CSS -->
-<link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+<link href="/vendor/morrisjs/morris.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="../vendor/font-awesome/css/font-awesome.min.css"
+<link href="/vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -60,39 +60,23 @@
 						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
 								Dashboard</a></li>
 
-						<li><a href="calendar"><i class="fas fa-calendar-alt"></i>
+						<li><a href="studentCalendars"><i class="fas fa-calendar-alt"></i>
 								Calendar</a></li>
 
 						
+						<li><a href="studentViewTeachers"><i class="fa fa-edit fa-fw"></i>
+								VLE</a></li>
 						
-						
-						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
-								View Class</a></li>
-								
-								
-							
-						<li><a href="viewRoutines"><i class="fa fa-edit fa-fw"></i>
-								View Routine</a></li>
-								
-						
+		
+						<li><a href="onlineExams1"><i class="fa fa-edit fa-fw"></i>
+								Attend Examination</a></li>
 
-						<li><a href="addOnlineExams"><i class="fa fa-edit fa-fw"></i>
-								Add Online Examination</a></li>
-
-						<li><a href="online-Exam"><i class="fa fa-edit fa-fw"></i>
-								Online Examination</a></li>
-
-						<li><a href="online-Exam1"><i class="fa fa-edit fa-fw"></i>
-								Online Examination1</a></li>
-
-						<li><a href="viewSubjects"><i class="fa fa-edit fa-fw"></i>
-								View Subject</a></li>
-
+												
 						<li><a href="viewAssignments"><i class="fa fa-edit fa-fw"></i>
 								View Assignments</a></li>
 
 						
-						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="student/viewStudentAttendances?id=${student} "><i class="fa fa-edit fa-fw"></i>
 								View Attendance</a></li>
 
 					

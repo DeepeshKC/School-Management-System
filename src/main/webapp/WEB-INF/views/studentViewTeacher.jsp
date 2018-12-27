@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Student Details</title>
+<title>VLE</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="studentHeader.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">View Student</h1>
+				<h1 class="page-header">VLE</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Student Details</div>
+					<div class="panel-heading">Teacher Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
@@ -31,33 +31,26 @@
 							<thead>
 							<thead>
 								<tr>
-									<th>Student ID</th>
-									
+									<th>Teacher ID</th>
 									<th>First Name</th>
 									<th>Last Name</th>
-									<th>Username</th>
 									<th>Email Address</th>
-									<th>Address</th>
-									<th>Contact Number</th>
-									<th>Add Student to Class</th>
+									
+									<th>View Resources</th>
 								</tr>
 
-								<c:forEach var="student" items="${StudentList}">
+								<c:forEach var="teacher" items="${teachersList}">
 									<tr class="odd gradeX">
-										<td>${student.getId()}</td>
+										<td>${teacher.getTeacherId()}</td>
+										<td>${teacher.getFirstName()}</td>
+										<td>${teacher.getLastName()}</td>
 										
-										<td>${student.getFirstName()}</td>
-										<td>${student.getLastName()}</td>
-										<td>${student.getUsername()}</td>
-										<td>${student.getEmail()}</td>
-										<td>${student.getAddress()}</td>
-										<td>${student.getContactNo()}</td>
-										
+										<td>${teacher.getEmail()}</td>
+									
 										<td><a
-											href="addStudentClass?id=${student.getId()}&class_id=${classes.getClassId()}"
-											class="btn btn-primary">Add Student</a></td>
-		
-										</tr>
+											href="studentViewResource?id=${teacher.getTeacherId()}"
+											class="btn btn-success">View</a></td>
+									</tr>
 								</c:forEach>
 							</thead>
 						</table>

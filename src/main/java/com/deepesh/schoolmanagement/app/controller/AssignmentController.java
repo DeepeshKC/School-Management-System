@@ -22,14 +22,16 @@ public class AssignmentController {
 	}
 
 	@RequestMapping(value = "**/teacher/addAssignments", method = RequestMethod.GET)
-	public String loadAddAssignments() {
+	public String loadAddAssignments(@RequestParam("class_id")Long class_id, @RequestParam("teacher_id")Long teacher_id, Model model, Model model1) {
+	     model.addAttribute("classes", class_id);
+	     model.addAttribute("teacher", teacher_id);
 		return "teacherAddAssignment";
 	}
 
 	@RequestMapping(value = "**/teacher/add-addAssignments", method = RequestMethod.POST)
 	public String addAssignments(@ModelAttribute("assignment") Assignment assignment) {
 		assignmentRepository.save(assignment);
-		return "redirect:/viewAssignments";
+		return "redirect:teacher/viewAssignments";
 
 	}
 
@@ -37,6 +39,12 @@ public class AssignmentController {
 	public String viewAssignments(Model model) {
 		model.addAttribute("assignmentList", assignmentRepository.findAll());
 		return "teacherViewAssignment";
+	}
+	
+	@RequestMapping(value = "/viewAssignments", method = RequestMethod.GET)
+	public String ad_iewAssignments(Model model) {
+		model.addAttribute("assignmentList", assignmentRepository.findAll());
+		return "viewAssignment";
 	}
 
 	@RequestMapping(value = "delete-deleteAssignment", method = RequestMethod.GET)

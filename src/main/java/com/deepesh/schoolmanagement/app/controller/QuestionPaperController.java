@@ -42,6 +42,12 @@ public class QuestionPaperController {
 		return "teacherViewQuestionPaper";
 	}
 	
+	@RequestMapping(value = "/viewQuestionPapers", method = RequestMethod.GET)
+	public String ad_viewQuestion(Model model) {
+		model.addAttribute("questionPaperList", questionRepository.findAll());
+		return "viewQuestionPaper";
+	}
+	
 	@RequestMapping(value="view ", method=RequestMethod.GET)
 	public String loadQuestion(Model model, Long id) {
 		//model.addAttribute("questionPaperList", questionRepository.question(id));

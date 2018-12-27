@@ -13,80 +13,89 @@ import com.deepesh.schoolmanagement.app.model.Parent;
 import com.deepesh.schoolmanagement.app.model.Student;
 import com.deepesh.schoolmanagement.app.model.Teacher;
 import com.deepesh.schoolmanagement.app.repository.AccountRepository;
+import com.deepesh.schoolmanagement.app.repository.RoutineRepository;
 import com.deepesh.schoolmanagement.app.repository.StudentRepository;
-import com.deepesh.schoolmanagement.app.repository.SubjectClassRepository;
 
 @Controller
 public class AccountController {
 
-	@Autowired private AccountRepository accountRepository;
-	@Autowired private StudentRepository studentRepository;
-	
-	@RequestMapping(value="/studentLogin", method= RequestMethod.POST )
-	public String loginStudent(Login login, Model model) {
+	@Autowired
+	private AccountRepository accountRepository;
+	@Autowired
+	private StudentRepository studentRepository;
+	@Autowired
+	private RoutineRepository routineRepository;
+
+	@RequestMapping(value = "/userLogin", method = {RequestMethod.POST, RequestMethod.GET})
+	public String loginStudent(Login login, Model model, Model model2) {
 		System.out.println(login.getUserType());
 		if (login.getUserType().equals("Student")) {
-			Student student=accountRepository.loginStudent(login.getUsername(), login.getPassword());
-			
-			if(student!=null) {
+			Student student = accountRepository.loginStudent(login.getUsername(), login.getPassword());
+
+			if (student != null) {
 				System.out.println("logged in");
-				
+				model.addAttribute("routineList", routineRepository.findRoutineByStudentId(student.getId()));
+				model2.addAttribute("student", student.getId());
 				return "studentDasboard";
-			} 
-			else{
+			} else {
+
 				return "redirect:/login";
 			}
+
 		} else if (login.getUserType().equals("Admin")) {
-			Admin admin=accountRepository.loginAdmin(login.getUsername(), login.getPassword());
-			
-			if(admin!=null) {
+			Admin admin = accountRepository.loginAdmin(login.getUsername(), login.getPassword());
+
+			if (admin != null) {
 				System.out.println("logged in");
 				return "adminDashboard";
-			} 
-			else{
+			} else {
 				return "redirect:/login";
 			}
+
 		} else if (login.getUserType().equals("Teacher")) {
-			Teacher teacher=accountRepository.loginTeacher(login.getUsername(), login.getPassword());
-			
-			if(teacher!=null) {
+			Teacher teacher = accountRepository.loginTeacher(login.getUsername(), login.getPassword());
+
+			if (teacher != null) {
 				System.out.println("logged in");
+				model.addAttribute("teacher", teacher.getTeacherId());
 				return "teacherDashboard";
-			} 
-			else{
+			} else {
+
 				return "redirect:/login";
 			}
 		} else if (login.getUserType().equals("Parent")) {
-			Parent parent=accountRepository.loginParent(login.getUsername(), login.getPassword());
-			
-			if(parent!=null) {
+			Parent parent = accountRepository.loginParent(login.getUsername(), login.getPassword());
+
+			if (parent != null) {
 				System.out.println(parent.getParentId());
-				//model.addAttribute("subjectList",subject.getSubjectByStudent(parent.getParentId()));
+				// model.addAttribute("subjectList",subject.getSubjectByStudent(parent.getParentId()));
 				model.addAttribute("studentList", studentRepository.getStudentbyParent(parent.getParentId()));
 				return "parentDashboard";
-			} 
-			else{
+			} else {
+
 				return "redirect:/login";
 			}
-		} else if (login.getUserType().equals("AdministrationStaff")) {
-			AdministrativeStaff as=accountRepository.loginAdministrativeStaff(login.getUsername(), login.getPassword());
-			
-			if(as!=null) {
+		} else if (login.getUserType().equals("Administrative Staff")) {
+			AdministrativeStaff as = accountRepository.loginAdministrativeStaff(login.getUsername(),
+					login.getPassword());
+
+			if (as != null) {
 				System.out.println("logged in");
-				return "studentDasboard";
-			} 
-			else{
+				return "administrationStaffDashboard";
+			} else {
+
 				return "redirect:/login";
 			}
 		} else {
+
 			return "redirect:/login";
 		}
-		
+
 	}
-	@RequestMapping(value="/login", method= RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String redirectpage() {
 		return "login";
 	}
-	
-	
+
 }

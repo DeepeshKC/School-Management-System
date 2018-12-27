@@ -32,8 +32,8 @@
 							<thead>
 								<tr>
 									<th>Student ID</th>
-									<th>University ID</th>
-									<th>Class ID</th>
+									
+									
 									<th>First Name</th>
 									<th>Last Name</th>
 									<th>Username</th>
@@ -48,8 +48,7 @@
 								<c:forEach var="student" items="${studentsList}">
 									<tr class="odd gradeX">
 										<td>${student.getId()}</td>
-										<td>${student.getUniversity().getUniversityId()}</td>
-										<td>${student.getClasses().getClassId()}</td>
+										
 										<td>${student.getFirstName()}</td>
 										<td>${student.getLastName()}</td>
 										<td>${student.getUsername()}</td>

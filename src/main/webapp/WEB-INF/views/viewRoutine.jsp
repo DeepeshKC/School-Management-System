@@ -52,7 +52,7 @@
 											<td>${routine.getFifthPeriod()}</td>
 
 											<td><a
-												href="update-updateRoutine?id=${routine.getRoutineId()}"
+												href="updateRoutines?id=${routine.getRoutineId()}"
 												class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
 												href="delete-deleteRoutine?id=${routine.getRoutineId()}"
 												class="btn btn-danger"><span class="fa fa-trash"></span></a></td>

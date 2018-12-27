@@ -45,6 +45,12 @@ public class TeacherController {
 		model.addAttribute("teachersList", teacherRepository.findAll());
 		return "viewTeacher";
 	}
+	
+	@RequestMapping(value = "**/studentViewTeachers", method = RequestMethod.GET)
+	public String student_loadViewTeacher(Model model) {
+		model.addAttribute("teachersList", teacherRepository.findAll());
+		return "studentViewTeacher";
+	}
 
 	@RequestMapping(value = "delete-deleteTeacher", method = RequestMethod.GET)
 	public String deleteTeacher(@RequestParam("id") Long id) {

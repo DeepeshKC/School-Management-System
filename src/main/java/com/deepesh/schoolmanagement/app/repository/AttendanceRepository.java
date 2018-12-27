@@ -13,4 +13,7 @@ import com.deepesh.schoolmanagement.app.model.Student;
 public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 	@Query("select s from Student s")
 	List<Student> student(Long id);
+
+	@Query("select att from Attendance att where att.student.id=?1")
+	List<Attendance> getAttendanceById(Long id);
 }

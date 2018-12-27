@@ -57,6 +57,7 @@
 									
 									<th>View Marks</th>
 									<th>View Attendance</th>
+									<th>View Routine</th>
 								</tr>
 
 								<c:forEach var="student" items="${studentList}">
@@ -75,8 +76,11 @@
 											class="btn btn-primary">View marks </a></td>
 									
 										<td><a
-											href="/viewStudentAttendance?id=${student.getStudent().getId()}"
+											href="parent/viewStudentAttendance?id=${student.getStudent().getId()}"
 											class="btn btn-primary">View Attendance</a></td>
+											<td><a
+											href="parent/viewRoutines?id=${student.getStudent().getId()}"
+											class="btn btn-warning">View Routine</a></td>
 
 									</tr>
 								</c:forEach>

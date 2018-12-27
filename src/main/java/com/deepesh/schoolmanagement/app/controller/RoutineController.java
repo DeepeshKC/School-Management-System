@@ -63,28 +63,40 @@ public class RoutineController {
 
 		return "teacherViewRoutine";
 	}
-	@RequestMapping(value = "**/student/viewRoutines", method = RequestMethod.GET)
-	public String student_viewRoutine(@RequestParam("id")Long id, Model model) {
-		model.addAttribute("routineList", routineRepository.findRoutineByClassId(id));
-
-		return "studentViewRoutine";
+	@RequestMapping(value = "**/parent/viewRoutines", method = RequestMethod.GET)
+	public String parent_viewRoutine(@RequestParam("id")Long id, Model model) {
+		model.addAttribute("routineList", routineRepository.findRoutineByStudentId(id));
+      return "parentViewRoutines";
+	}
+	
+	@RequestMapping(value = "viewRoutines", method = RequestMethod.GET)
+	public String add_viewRoutine( Model model) {
+		model.addAttribute("routineList", routineRepository.findAll());
+      return "viewRoutine";
 	}
 
-	@RequestMapping(value = "update-updateRoutine", method = RequestMethod.POST)
-	public String updateRoutine(@RequestParam("id") Long id, Model model) {
+	@RequestMapping(value = "updateRoutines", method = RequestMethod.GET)
+	public String updateRoutine(@RequestParam("id") Long id, Model model, Model model1) {
 		Optional<Routine> routine = routineRepository.findById(id);
 		Routine r = routine.get();
-		Classes c = new Classes();
-		Subject subject = new Subject();
-		// model1.
-
-		return "redirect:/viewRoutines";
+		model.addAttribute("routine", r);
+		model1.addAttribute("subjectList", subjectRepository.findAll());
+		
+		return "updateRoutine";
 	}
-
+	
+	@RequestMapping(value = "update-updateRoutine", method = RequestMethod.POST)
+	public String  update_updateRoutine(@ModelAttribute("routine")Routine routine) {
+		
+		
+		routineRepository.save(routine);
+		return "redirect:staff/viewRoutines";
+	}
+	
 	@RequestMapping(value = "delete-deleteRoutine", method = RequestMethod.GET)
 	public String deleteRoutine(@RequestParam("id") Long id) {
 		routineRepository.deleteById(id);
-		return "redirect:/viewRoutines";
+		return "redirect:/viewRoutineClass";
 	}
 
 	@RequestMapping(value = "viewRoutineClass", method = RequestMethod.GET)

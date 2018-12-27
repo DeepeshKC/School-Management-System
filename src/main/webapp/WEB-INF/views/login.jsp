@@ -39,7 +39,7 @@
 						<h3 class="panel-title">Please Sign In</h3>
 					</div>
 					<div class="panel-body">
-						<form role="form" action="/studentLogin" method="POST">
+						<form role="form" action="/userLogin" method="POST">
 							<fieldset>
 								<div class="form-group">
 									<input class="form-control" placeholder="Username" name="username"
@@ -55,7 +55,7 @@
 										<option value="Admin">Admin</option>
 										<option value="Teacher">Teacher</option>
 										<option value="Parent">Parent</option>
-										<option value="AdministrationStaff">Administration Staff</option>
+										<option value="Administrative Staff">Administration Staff</option>
 									</select>
 								</div>
 								<button type="submit" class="btn btn-lg btn-success btn-block">Login</button>

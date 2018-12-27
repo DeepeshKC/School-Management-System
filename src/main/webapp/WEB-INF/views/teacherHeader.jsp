@@ -64,7 +64,7 @@
 								Calendar</a></li>
 
 					
-						<li><a href="teacher/viewClasses"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="teacher/viewClasses?id=${teacher} "><i class="fa fa-edit fa-fw"></i>
 								View Class</a></li>
 								
 

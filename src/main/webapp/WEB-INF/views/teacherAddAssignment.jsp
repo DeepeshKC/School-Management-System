@@ -23,6 +23,8 @@
 							<form:form name="qryform" method="POST" action="add-addAssignments"
 								modelAttribute="assignment">
 
+                                <form:hidden path="teacher" value="${teacher} " />
+                                <form:hidden path="classes" value="${classes}" />
 								<div class="form-group">
 									<label>Please Add Assignment Title</label>
 									<form:input path="assignmentTitle" class="form-control"

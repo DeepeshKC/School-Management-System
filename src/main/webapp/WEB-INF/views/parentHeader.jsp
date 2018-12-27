@@ -64,24 +64,7 @@
 								Calendar</a></li>
 
 					
-						<li><a href="parent/viewSubject"><i class="fa fa-edit fa-fw"></i>
-								View Subject</a></li>
-								
-								
-						<li><a href="parent/viewRoutines"><i class="fa fa-edit fa-fw"></i>
-								View Routine</a></li>
-								
-
-
-						<li><a href="parent/viewResult"><i class="fa fa-edit fa-fw"></i>
-								View Result</a></li>
-
-
-
 						
-
-						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
-								View Attendance</a></li>
 
 
 

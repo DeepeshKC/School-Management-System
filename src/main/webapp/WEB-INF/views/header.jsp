@@ -57,33 +57,32 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
+						<li><a href="#"><i class="fa fa-dashboard fa-fw"></i>
 								Dashboard</a></li>
 
 						<li><a href="calendar"><i class="fas fa-calendar-alt"></i>
 								Calendar</a></li>
 
 						<li><a href="userTypeForm"><i class="fa fa-edit fa-fw"></i>
-								UserType</a></li>
+								Add UserType</a></li>
 						<li><a href="viewUserTypes"><i class="fa fa-edit fa-fw"></i>
 								View UserType</a></li>
 
-						
+
 						<li><a href="addClasses"><i class="fa fa-edit fa-fw"></i>
 								Add Class</a></li>
 						<li><a href="viewClasses"><i class="fa fa-edit fa-fw"></i>
 								View Class</a></li>
-								
-								
-								<li><a href="addRoutines"><i class="fa fa-edit fa-fw"></i>
+
+
+						<li><a href="addRoutines"><i class="fa fa-edit fa-fw"></i>
 								Add Routine</a></li>
 						<li><a href="viewRoutines"><i class="fa fa-edit fa-fw"></i>
 								View Routine</a></li>
-								
-								<li><a href="addExamMark"><i class="fa fa-edit fa-fw"></i>
+
+						<li><a href="addExamMark"><i class="fa fa-edit fa-fw"></i>
 								Add Exam Mark</a></li>
-						<li><a href="addMarks"><i class="fa fa-edit fa-fw"></i>
-								Add mark</a></li>
+						
 
 						<li><a href="addUniversities"><i class="fa fa-edit fa-fw"></i>
 								Add University</a></li>
@@ -95,15 +94,6 @@
 								Add Exam</a></li>
 						<li><a href="viewExams"><i class="fa fa-edit fa-fw"></i>
 								View Exam</a></li>
-
-						<li><a href="addOnlineExams"><i class="fa fa-edit fa-fw"></i>
-								Add Online Examination</a></li>
-
-						<li><a href="online-Exam"><i class="fa fa-edit fa-fw"></i>
-								Online Examination</a></li>
-
-						<li><a href="online-Exam1"><i class="fa fa-edit fa-fw"></i>
-								Online Examination1</a></li>
 
 						<li><a href="addTeachers"><i
 								class="fas fa-chalkboard-teacher"></i> Add Teacher</a></li>
@@ -125,46 +115,23 @@
 						<li><a href="viewParents"><i class="fa fa-edit fa-fw"></i>
 								View Parent</a></li>
 
-						<li><a href="addAdmins"><i class="fa fa-edit fa-fw"></i>
-								Add Admin</a></li>
-						<li><a href="viewAdmins"><i class="fa fa-edit fa-fw"></i>
-								View Admin</a></li>
+
 
 						<li><a href="addSubjects"><i class="fa fa-edit fa-fw"></i>
 								Add Subject</a></li>
 						<li><a href="viewSubjects"><i class="fa fa-edit fa-fw"></i>
 								View Subject</a></li>
 
-						<li><a href="addAssignments"><i class="fa fa-edit fa-fw"></i>
-								Add Assignment</a></li>
 						<li><a href="viewAssignments"><i class="fa fa-edit fa-fw"></i>
 								View Assignments</a></li>
 
-						<li><a href="addQuestionPapers"><i
-								class="fa fa-editfa-fw"> </i> Add Question Paper</a></li>
+
 						<li><a href="viewQuestionPapers"><i
 								class="fa fa-edit fa-fw"></i> View Question Paper</a></li>
 
 
-						<li><a href="addAttendances"><i class="fa fa-edit fa-fw"></i>
-								Add Attendance</a></li>
 						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
 								View Attendance</a></li>
-
-						<li><a href="courseForm"><i class="fa fa-edit fa-fw"></i>
-								Course</a></li>
-						<li><a href="viewCourse"><i class="fa fa-edit fa-fw"></i>
-								View Course</a></li>
-
-						<li><a href="testPaperForm"><i class="fa fa-edit fa-fw"></i>
-								Test Paper</a></li>
-						<li><a href="viewTeacher"><i class="fa fa-edit fa-fw"></i>
-								View Test Paper</a></li>
-
-						<li><a href="intakeForm"><i class="fa fa-edit fa-fw"></i>
-								Intake</a></li>
-						<li><a href="viewIntake"><i class="fa fa-edit fa-fw"></i>
-								Intake</a></li>
 
 					</ul>
 				</div>

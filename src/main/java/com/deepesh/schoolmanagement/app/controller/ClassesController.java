@@ -34,8 +34,9 @@ public class ClassesController {
 
 	
 	@RequestMapping(value = "**/teacher/viewClasses", method = RequestMethod.GET)
-	public String teacher_viewClass(Model model) {
+	public String teacher_viewClass(@RequestParam("id")Long teacher_id,Model model1,Model model) {
 		model.addAttribute("classList", classRepository.findAll());
+		model1.addAttribute("teacher", teacher_id);
 		return "teacherViewClass";
 	}
 	

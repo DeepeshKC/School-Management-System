@@ -45,9 +45,9 @@
 										<td><a
 											href="/teacherViewStudents?id=${classes.getClassId()}"
 											class="btn btn-success">View Students </a></td>
-										<td><a href="/viewRoutineClass?id=${classes.getClassId()}"
+										<td><a href="teacher/viewRoutines?id=${classes.getClassId()}"
 											class="btn btn-primary">Routine</a></td>
-											<td><a href="teacher/addAssignments?id=${classes.getClassId()}"
+											<td><a href="teacher/addAssignments?class_id=${classes.getClassId()}&teacher_id=${teacher}"
 											class="btn btn-success">Add</a></td>
 											
 											

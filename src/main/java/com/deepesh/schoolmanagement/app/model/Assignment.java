@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Assignment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="assignment_id")
 	private Long assignmentId;
 
 	@Column(name = "assignment_title")

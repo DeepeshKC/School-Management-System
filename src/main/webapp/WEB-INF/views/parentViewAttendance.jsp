@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Online Exam</title>
+<title>View Exam</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="parentHeader.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Online Exam</h1>
+				<h1 class="page-header">Exam</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Online Exam</div>
+					<div class="panel-heading">Attendance Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
@@ -31,22 +31,21 @@
 							<thead>
 							<thead>
 								<tr>
-									<th>Exam ID</th>
-									<th>Subject</th>
-									<th>Total Questions</th>
-									<th>Marks</th>
-									<th>Time Limit</th>
-									<th>Action</th>
-								</tr>
+									<th>Student ID</th>
+									<th>Student Name</th>
+								
+									<th>Exam Date</th>
+									
+									<th>Status</th>
 
-								<c:forEach var="onlineExam" items="${onlineExamList}">
+								</tr>
+								<c:forEach var="student" items="${attendanceList}">
 									<tr class="odd gradeX">
-										<td>${onlineExam.getOnlineExamId()}</td>
-										<td>${onlineExam.getSubject()}</td>
-										<td>${onlineExam.getTotalQuestions()}</td>
-										<td>${onlineExam.getMarks()}</td>
-										<td>${onlineExam.getTimeLimit()}</td>
-										<td><a href="/online-Exam1" class="btn btn-success">Start</a></td>
+									<tr class="odd gradeX">
+										<td>${student.getStudent().getId()}</td>
+										<td>${student.getStudent().getFirstName()}</td>
+										<td>${student.getDate()}</td>
+										<td>${student.getStatus()}</td>
 										
 									</tr>
 								</c:forEach>
@@ -58,4 +57,4 @@
 		</div>
 	</div>
 </body>
-</html>l>
+</html>

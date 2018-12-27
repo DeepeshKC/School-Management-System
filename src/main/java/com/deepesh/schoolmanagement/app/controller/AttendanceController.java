@@ -86,8 +86,15 @@ public class AttendanceController {
 		return "redirect:/teacherViewStudents";
 	}
 
-		/*@RequestMapping(value="/viewStudentAttendance", method= RequestMethod.GET)
-		public String viewStudentAttendance() {
-			return "ff";
-		}*/
+		@RequestMapping(value="**/parent/viewStudentAttendance", method= RequestMethod.GET)
+		public String viewStudentAttendance(@RequestParam("id")Long id, Model model) {
+			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
+			return "parentViewAttendance";
+		}
+		
+		@RequestMapping(value="**/student/viewStudentAttendances", method= RequestMethod.GET)
+		public String student_viewStudentAttendance(@RequestParam("id")Long id, Model model) {
+			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
+			return "studentViewAttendance";
+		}
 }

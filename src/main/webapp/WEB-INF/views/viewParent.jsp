@@ -44,6 +44,7 @@
 									<th>User Type</th>
 									<th>Action</th>
 									<th>Link Student</th>
+									<th>Send Email</th>
 								</tr>
 
 								<c:forEach var="parent" items="${parentList}">
@@ -67,6 +68,8 @@
 
 										<td><a href="linkStudent?id=${parent.getParentId()}"
 											class="btn btn-primary">Link</a></td>
+											<td><a href="email?id=${parent.getEmail()}"
+											class="btn btn-primary">Send</a></td>
 									</tr>
 								</c:forEach>
 							</thead>

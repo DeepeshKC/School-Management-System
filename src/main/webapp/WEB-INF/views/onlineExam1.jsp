@@ -8,13 +8,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <!-- Bootstrap Core CSS -->
-<link href="../css/onlineexam.css" rel="stylesheet">
 <title>Online Exam</title>
-<style>
-	/*ul li {
-		height: 50px;
-	}*/
-</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
@@ -22,6 +17,16 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Online Exam Question</h1>
+
+				<c:if test="${result != null}">
+					<h1 style="color: green">Your score: ${score}</h1>
+					<h3 style="color: green">Total Corrected Answers: ${score / 10}</h3>
+				</c:if>
+				
+				<div id="time">
+					
+				</div>
+
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -32,88 +37,95 @@
 					<div class="panel-heading">Online Exam Question</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
-						<div class="row"><br><br>
-            <div class="col-sm-8 col-sm-offset-2">
-                <div class="loader">
-                    <div class="col-xs-3 col-xs-offset-5">
-                        <div id="loadbar" style="display: none;">
-                            <img src="http://schoolsearch.co.ke/systems/img/loader.gif_large.gif" alt="Loading" class="center-block loanParamsLoader" style="">
-                        </div>
-                    </div>
-                    
-                    <c:forEach items="${onlineExamList}" var="item">
-                    	<div id="quiz" style="margin-button: 20px;">
-                  
-                        <div>
-                            <h3><span class="label label-warning" id="qid">1</span>
-                            <span id="question">${item.question1}</span>
-                            </h3>
-                        </div>
-                        <ul class="question">
-                          <li>
-                            <input type="radio" class="inputoption" id="f-option" name="option1[]" value="1">
-                            <label for="f-option" class="element-animation">${item.option1}</label>
-                            <div class="check"></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" class="inputoption" id="s-option" name="option2[]" value="2">
-                            <label for="s-option" class="element-animation">${item.option2}</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" class="inputoption" id="t-option" name="option3[]" value="3">
-                            <label for="t-option" class="element-animation">${item.option3}</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                          
-                          <li>
-                            <input type="radio" class="inputoption" id="t-option" name="option4[]" value="3">
-                            <label for="t-option" class="element-animation">${item.option4}</label>
-                            <div class="check"><div class="inside"></div></div>
-                          </li>
-                        </ul>
-                    </div>
-                    </c:forEach>
+						<div class="row">
+							<br> <br>
+							<div class="col-sm-8 col-sm-offset-2">
+								<div class="loader">
+									<div class="col-xs-3 col-xs-offset-5">
+										<div id="loadbar" style="display: none;">
+											<img
+												src="http://schoolsearch.co.ke/systems/img/loader.gif_large.gif"
+												alt="Loading" class="center-block loanParamsLoader" style="">
+										</div>
+									</div>
 
-                    
-                </div>
-                <div class="hint">
-                    <button id="show-hint-button" disabled>Next</button><br><br>
-                    <span class="hidden show-hint">
-                        <p>Comment for single line //<br>
-                        comment for multi line !--ok--<p>
-                    </span>
-                </div>
-                <div class="text-muted">
-                    <span id="answer"></span>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div id="result-of-question" style="display: none;">
-                    <span id="totalCorrect" class="pull-right"></span>
-                    <table class="table table-hover table-responsive" >
-                        <thead>
-                            <tr>
-                                <th>Question No.</th>
-                                <th>Our answer</th>
-                                <th>Your answer</th>
-                                <th>Result</th>
-                            </tr>
-                        </thead>
-                        <tbody id="quizResult"></tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+									<form method="post" action="/viewResult">
+										<c:forEach items="${onlineExamList}" var="item"
+											varStatus="loop">
+
+											<div>
+												<b>${item.question1}</b><br>
+
+												<div class="radio">
+													<label><input type="radio" value="a"
+														name="answers[${loop.index}]">${item.option1}</label>
+												</div>
+												<div class="radio">
+													<label><input type="radio" value="b"
+														name="answers[${loop.index}]">${item.option2}</label>
+												</div>
+												<div class="radio">
+													<label><input type="radio" value="c"
+														name="answers[${loop.index}]">${item.option3}</label>
+												</div>
+												<div class="radio">
+													<label><input type="radio" value="d"
+														name="answers[${loop.index}]">${item.option4}</label>
+												</div>
+												<input type="hidden" name="rightAnswer"
+													value="${item.rightAnswer}">
+
+												<c:if test="${result != null}">
+													<br>
+													<b>Result:
+														${result.get("res".concat(loop.index)).get(0)}</b>
+													<br>
+													<b>Your answer:
+														${result.get("res".concat(loop.index)).get(1)}</b>
+													<br>
+													<b>Correct answer:
+														${result.get("res".concat(loop.index)).get(2)}</b>
+												</c:if>
+											</div>
+
+											<hr />
+										</c:forEach>
+
+										<c:if test="${result == null}">
+											<button type="submit" id="check">Check</button>
+										</c:if>
+
+
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		$(document).ready(function() {
+			var min = 9;
+			var sec = 60;
+			var timer = setInterval(function() {
+				sec--;
+				$("#time").text("Time: "+min + ":" + sec);
+				if (sec == 0) {
+					sec = 60;
+					min--;
+					
+					if (min < 0) {
+						alert("Time out");
+						clearInterval(timer);
+					}
+				}
+			}, 1000);
+		})
+	</script>
+
 
 </body>
 </html>
