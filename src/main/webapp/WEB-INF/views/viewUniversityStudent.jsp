@@ -40,8 +40,8 @@
 									<th>Email Address</th>
 									<th>Address</th>
 									<th>Contact Number</th>
-									<th>Enroll Date</th>
-									<th>Status</th>
+									<th>Enroll to University</th>
+									
 									<th>Action</th>
 								</tr>
 

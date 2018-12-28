@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View User Type</title>
+<title>Attendance</title>
 </head>
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">User Type</h1>
+				<h1 class="page-header">Attendance</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -22,34 +22,40 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">User Type Details</div>
+					<div class="panel-heading">Attendance Details</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
 							id="dataTables-example">
 							<thead>
+							<thead>
 								<tr>
-									<th>User Type ID</th>
-									<th>User Type</th>
-								
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach var="user" items="${userTypeList}">
+									<th>Student ID</th>
+									<th>Class</th>
+									<th>Student Name</th>
+									<th>Date</th>
+									<th>Status</th>
 
+								</tr>
+								<c:forEach var="student" items="${attendanceList}">
 									<tr class="odd gradeX">
-										<td>${user.getUserTypeId()}</td>
-										<td>${user.getUserType()}</td>
+									<tr class="odd gradeX">
+										<td>${student.getStudent().getId()}</td>
+										<td>${student.getClasses().getClassName()}</td>
+										<td>${student.getStudent().getFirstName()}</td>
+										<td>${student.getDate()}</td>
+										<td>${student.getStatus()}</td>
+
 									</tr>
 								</c:forEach>
-							</tbody>
+							</thead>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

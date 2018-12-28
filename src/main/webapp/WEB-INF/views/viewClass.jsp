@@ -33,33 +33,35 @@
 								<tr>
 									<th>Class ID</th>
 									<th>Class Name</th>
-									<th>Action</th>
+
 									<th>Add Student to Class</th>
 									<th>Add Teacher to Class</th>
 									<th>Add Subject to Class</th>
 									<th>View Routine</th>
+									<th>View Attendance History</th>
 								</tr>
 								<c:forEach var="classes" items="${classList}">
 									<tr class="odd gradeX">
 									<tr class="odd gradeX">
 										<td>${classes.getClassId()}</td>
 										<td>${classes.getClassName()}</td>
-										<td><a href="#"
-											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
-											href="deleteClasses?id=${classes.getClassId()}" class="btn btn-danger"><span
-												class="fa fa-trash"></span></a></td>
-												
-												<td><a href="/addStudent?id=${classes.getClassId()}"
+
+										<td><a href="/addStudent?id=${classes.getClassId()}"
 											class="btn btn-primary">Add</a></td>
-					
+
 										<td><a href="/addTeacher?id=${classes.getClassId()}"
-											class="btn btn-primary">Add</a></td>
-													
+											class="btn btn-success">Add</a></td>
+
 										<td><a href="/addSubject?id=${classes.getClassId()}"
 											class="btn btn-primary">Add</a></td>
+
+										<td><a
+											href="/viewRoutineClass?id=${classes.getClassId()}"
+											class="btn btn-success">View</a></td>
 											
-									<td><a href="/viewRoutineClass?id=${classes.getClassId()}"
-											class="btn btn-primary">View</a></td>		
+										<td><a
+											href="/viewAttendanceHistory?id=${classes.getClassId()}"
+											class="btn btn-warning">View</a></td>
 									</tr>
 								</c:forEach>
 							</thead>

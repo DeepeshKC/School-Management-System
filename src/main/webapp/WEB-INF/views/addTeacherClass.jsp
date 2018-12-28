@@ -40,6 +40,7 @@
 									<th>Address</th>
 									<th>Contact Number</th>
 									<th>Add Teacher to Class</th>
+									<th>Action</th>
 								</tr>
 
 								<c:forEach var="teacher" items="${teachersList}">

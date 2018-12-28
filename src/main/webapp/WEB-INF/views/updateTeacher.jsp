@@ -21,7 +21,7 @@
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
 							<form:form name="qryform" method="POST" action="update-updateTeacher"
-								modelAttribute="teacher">
+								modelAttribute="teachers">
 								<form:hidden path="teacherId" value="${teachers.getTeacherId()} }"/>
 								
   

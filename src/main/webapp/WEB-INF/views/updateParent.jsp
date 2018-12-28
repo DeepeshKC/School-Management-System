@@ -22,7 +22,7 @@
 						<div class="col-lg-offset-3 col-lg-6">
 							<form:form name="qryform" method="POST"
 								action="update-updateParent" modelAttribute="parent">
-								<form:hidden path="parentId" value="${teachers.getParentId()} }" />
+								<form:hidden path="parentId" value="${parent.getParentId()} }" />
 								<div class="form-group">
 									<label>Please Update first name</label>
 									<form:input path="firstName" class="form-control"

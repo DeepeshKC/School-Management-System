@@ -54,10 +54,10 @@ public class ParentController {
 		return "redirect:/viewParents";
 	}
 
-	/*@RequestMapping(value = "/updateParents", method = RequestMethod.GET)
+	@RequestMapping(value = "/updateParents", method = RequestMethod.GET)
 	public String loadUpdateParentForm(@RequestParam("id") Long id, Model model) {
 		Optional<Parent> parent = parentRepository.findById(id);
-		Parent p = new Parent();
+		Parent p = parent.get();
 		model.addAttribute("parent", p);
 		return "updateParent";
 	}
@@ -68,8 +68,8 @@ public class ParentController {
 		ur.setUserTypeId(3);
 		parent.setUserType(ur);
 		parentRepository.save(parent);
-		return "redirect:viewparents";
-	}*/
+		return "redirect:/viewParents";
+	}
 	
 	@RequestMapping(value="/linkStudent", method=RequestMethod.GET)
 	public String loadStudent(@RequestParam("id") Long id, Model model1, Model model2) {

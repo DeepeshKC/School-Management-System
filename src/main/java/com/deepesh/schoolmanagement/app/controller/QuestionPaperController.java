@@ -48,11 +48,6 @@ public class QuestionPaperController {
 		return "viewQuestionPaper";
 	}
 	
-	@RequestMapping(value="view ", method=RequestMethod.GET)
-	public String loadQuestion(Model model, Long id) {
-		//model.addAttribute("questionPaperList", questionRepository.question(id));
-		return "onlineExam1";
-	}
 
 	@RequestMapping(value = "delete-deleteQuestionPaper", method = RequestMethod.POST)
 	public String deleteQuestion(@RequestParam("id") Long id, Model model) {

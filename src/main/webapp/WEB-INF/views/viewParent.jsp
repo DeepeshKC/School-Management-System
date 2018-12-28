@@ -40,7 +40,7 @@
 									<th>Profession</th>
 									<th>Relationship</th>
 									<th>Student Name</th>
-									<th>User Type</th>
+								
 									<th>Action</th>
 									<th>Link Student</th>
 									<th>Send Email</th>
@@ -58,7 +58,7 @@
 										<td>${parent.getProfession()}</td>
 										<td>${parent.getRelationship()}</td>
 										<td>${parent.getStudent().getUsername()}</td>
-										<td>${parent.getUserType().getUserType()}</td>
+									
 										<td><a
 											href="update-updateParent?id=${parent.getParentId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a

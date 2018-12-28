@@ -31,13 +31,13 @@
 									<tr>
 										<th>Question Paper ID</th>
 										<th>Question Paper Name</th>
-										<th>Question1</th>
+										<th>Question</th>
 										<th>Option1</th>
 										<th>Option2</th>
 										<th>Option3</th>
 										<th>Option4</th>
 										<th>Right Answer</th>
-										<th>Question1</th>
+									
 										<th>Class ID</th>
 										
 									</tr>

@@ -97,4 +97,10 @@ public class AttendanceController {
 			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
 			return "studentViewAttendance";
 		}
+		
+		@RequestMapping(value="**/viewAttendanceHistory", method= RequestMethod.GET)
+		public String viewClassAttendance(@RequestParam("id")Long id, Model model) {
+			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
+			return "viewAttendance";
+		}
 }

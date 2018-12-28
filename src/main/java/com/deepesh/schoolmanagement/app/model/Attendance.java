@@ -33,6 +33,10 @@ public class Attendance {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "student_id")
 	public Student student;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="class_id")
+	private Classes classes;
 
 	public Long getAttendanceId() {
 		return attendanceId;
@@ -64,6 +68,14 @@ public class Attendance {
 
 	public void setStudent(Student student) {
 		this.student = student;
+	}
+
+	public Classes getClasses() {
+		return classes;
+	}
+
+	public void setClasses(Classes classes) {
+		this.classes = classes;
 	}
 
 }
