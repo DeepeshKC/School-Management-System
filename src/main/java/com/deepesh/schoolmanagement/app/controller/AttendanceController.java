@@ -87,7 +87,7 @@ public class AttendanceController {
 	}
 
 		@RequestMapping(value="**/parent/viewStudentAttendance", method= RequestMethod.GET)
-		public String viewStudentAttendance(@RequestParam("id")Long id, Model model) {
+		public String parent_viewStudentAttendance(@RequestParam("id")Long id, Model model) {
 			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
 			return "parentViewAttendance";
 		}

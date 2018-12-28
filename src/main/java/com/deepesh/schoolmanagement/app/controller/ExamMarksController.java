@@ -1,5 +1,6 @@
 package com.deepesh.schoolmanagement.app.controller;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -67,11 +68,39 @@ public class ExamMarksController {
 	public String viewStudentMarks(Model model) {
 		model.addAttribute("examMarksList", examMarksRepository.findAll());
 		return "viewStudentMarks";
+		
 
 	}
+	
+	@RequestMapping(value = "student/viewStudentMarks", method = RequestMethod.GET)
+	public String viewStudentExam(@RequestParam("id") Long id,Model model,Model model1) {
+		model.addAttribute("examList", examRepository.findAll());
+		model1.addAttribute("student", id);
+		return "studentViewExam";
+	}
+	
+	@RequestMapping(value = "**/student/viewMarks", method = RequestMethod.GET)
+	public String student_viewStudentMarks(@RequestParam("id")Long exam_id, @RequestParam("student_id")Long student_id,Model model, Model model2, Model model3) {
+		Optional<ExamMarks> exam= examMarksRepository.findByStudentAndClass(exam_id, student_id);
+		ExamMarks em=exam.get();
+		double total=em.getEnglish()+em.getScience()+em.getNepali()+em.getComputer()+em.getMath();
+		double percentage=total/5;
+		model.addAttribute("examMarks", em);
+		model2.addAttribute("total", total);
+		model3.addAttribute("percentage", percentage);
+		return "studentViewExamMarks";
+
+	}
+	
 	@RequestMapping(value = "**/parent/viewMarks", method = RequestMethod.GET)
-	public String parent_viewStudentMarks(@RequestParam("id")Long exam_id, @RequestParam("student_id")Long student_id,Model model) {
-		model.addAttribute("examMarksList", examMarksRepository.findByStudentAndClass(exam_id, student_id));
+	public String parent_viewStudentMarks(@RequestParam("id")Long exam_id, @RequestParam("student_id")Long student_id,Model model, Model model2, Model model3) {
+		Optional<ExamMarks> exam= examMarksRepository.findByStudentAndClass(exam_id, student_id);
+		ExamMarks em=exam.get();
+		double total=em.getEnglish()+em.getScience()+em.getNepali()+em.getComputer()+em.getMath();
+		double percentage=total/5;
+		model.addAttribute("examMarks", em);
+		model2.addAttribute("total", total);
+		model3.addAttribute("percentage", percentage);
 		return "parentStudentMarks";
 
 	}

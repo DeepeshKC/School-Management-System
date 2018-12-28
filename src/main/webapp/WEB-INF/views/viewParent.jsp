@@ -27,8 +27,7 @@
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
-							id="dataTables-example">
-							<thead>
+							id="dataTable">
 							<thead>
 								<tr>
 									<th>Parent ID</th>
@@ -46,7 +45,7 @@
 									<th>Link Student</th>
 									<th>Send Email</th>
 								</tr>
-
+</thead>
 								<c:forEach var="parent" items="${parentList}">
 									<tr class="odd gradeX">
 										<td>${parent.getParentId()}</td>
@@ -72,7 +71,6 @@
 											class="btn btn-primary">Send</a></td>
 									</tr>
 								</c:forEach>
-							</thead>
 						</table>
 					</div>
 				</div>
@@ -80,4 +78,17 @@
 		</div>
 	</div>
 </body>
+
+<script>
+//Call the dataTables jQuery plugin
+$(document).ready(function() {
+  $('#dataTable').DataTable({
+	  dom:'Bfrtip',
+	  buttons:[
+		  'copy','csv','excel','pdf','print'
+	  ]
+  });
+});
+
+</script>
 </html>

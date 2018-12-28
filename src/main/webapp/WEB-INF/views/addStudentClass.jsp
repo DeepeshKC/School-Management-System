@@ -14,7 +14,7 @@
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">View Student</h1>
+				<h1 class="page-header">Add Student to Class</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>

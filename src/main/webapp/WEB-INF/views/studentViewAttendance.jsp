@@ -7,14 +7,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>View Exam</title>
+<title>Attendance</title>
 </head>
 <body>
 	<jsp:include page="studentHeader.jsp" />
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Exam</h1>
+				<h1 class="page-header">Attendance</h1>
 			</div>
 			<!-- /.col-lg-12 -->
 		</div>
@@ -34,7 +34,7 @@
 									<th>Student ID</th>
 									<th>Student Name</th>
 								
-									<th>Exam Date</th>
+									<th>Date</th>
 									
 									<th>Status</th>
 

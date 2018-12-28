@@ -67,7 +67,14 @@
 								<td>Computer</td>
 								<td>${examMarks.getComputer()}</td>
 								</tr>
-								
+								<tr class="odd gradeX">
+								<td>Total Marks</td>
+								<td>${total}</td>
+								</tr>
+								<tr class="odd gradeX">
+								<td>Percentage</td>
+								<td>${percentage}%</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>

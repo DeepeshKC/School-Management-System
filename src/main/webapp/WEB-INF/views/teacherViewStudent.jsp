@@ -27,8 +27,7 @@
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
-							id="dataTables-example">
-							<thead>
+							id="dataTable">
 							<thead>
 								<tr>
 									<th>Student ID</th>
@@ -41,6 +40,7 @@
 									<th>Attendance Status</th>
 								</tr>
 
+							</thead>
 								<c:forEach var="student" items="${studentsList}">
 									<tr class="odd gradeX">
 										<td>${student.getId()}</td>
@@ -59,7 +59,6 @@
 
 									</tr>
 								</c:forEach>
-							</thead>
 						</table>
 					</div>
 				</div>
@@ -67,4 +66,9 @@
 		</div>
 	</div>
 </body>
+<script>
+$(document).ready(function() {
+	  $('#dataTable').DataTable();
+	});
+</script>
 </html>

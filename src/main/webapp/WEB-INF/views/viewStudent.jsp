@@ -12,6 +12,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<div id="page-wrapper">
+
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">View Student</h1>
@@ -19,7 +20,12 @@
 			<!-- /.col-lg-12 -->
 		</div>
 		<!-- /.row -->
+		<input type="text" id="search" class="form-control"
+			placeholder="Search">
+
+
 		<div class="row">
+
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">Student Details</div>
@@ -27,29 +33,29 @@
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
-							id="dataTables-example">
+							id="studentTable">
 							<thead>
-							<thead>
-								<tr>
+								<tr class='header'>
 									<th>Student ID</th>
-									<th>First Name</th>
-									<th>Last Name</th>
+									<th >First Name</th>
+									<th >Last Name</th>
 									<th>Username</th>
 									<th>Email Address</th>
 									<th>Address</th>
 									<th>Contact Number</th>
 									<th>User Type</th>
 									<th>Action</th>
-									<th>Link Parents</th>
 									
-								
-								</tr>
 
+
+								</tr>
+							</thead>
+							<tbody>
 								<c:forEach var="student" items="${studentsList}">
 									<tr class="odd gradeX">
-										<td>${student.getId()}</td>
-										<td>${student.getFirstName()}</td>
-										<td>${student.getLastName()}</td>
+										<td class="studentid">${student.getId()}</td>
+										<td class='firstname'>${student.getFirstName()}</td>
+										<td class='lastname'>${student.getLastName()}</td>
 										<td>${student.getUsername()}</td>
 										<td>${student.getEmail()}</td>
 										<td>${student.getAddress()}</td>
@@ -60,13 +66,13 @@
 											<a href="deleteStudents?id=${student.getId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
 
-										
 
-								
+
+
 
 									</tr>
 								</c:forEach>
-							</thead>
+							</tbody>
 						</table>
 					</div>
 				</div>
@@ -74,4 +80,30 @@
 		</div>
 	</div>
 </body>
+<script>
+	$(document)
+			.ready(
+					function() {
+						$("#search")
+								.on(
+										"keyup",
+										function() {
+											var value = $(this).val()
+													.toLowerCase();
+											$("#studentTable .odd ")
+													.filter(
+															function() {
+																$(this)
+																		.toggle(
+																				$(
+																						'.firstname,.lastname,.studentid',
+																						this)
+																						.text()
+																						.toLowerCase()
+																						.indexOf(
+																								value) > -1)
+															});
+										});
+					});
+</script>
 </html>

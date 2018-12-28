@@ -34,7 +34,7 @@
 									<th>Student ID</th>
 									
 									<th>Class Name</th>
-										<th>Exam Name</th>
+									<th>Exam Name</th>
 									<th>Student Name</th>
 									<th>Science</th>
 									<th>English</th>

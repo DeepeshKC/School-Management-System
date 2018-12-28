@@ -36,6 +36,7 @@ public class StudentController {
 		studentRepository.save(student);
 		return "redirect:viewStudents";
 	}
+	
 
 	@RequestMapping(value = "viewStudents", method = RequestMethod.GET)
 	public String loadViewStudent(Model model) {

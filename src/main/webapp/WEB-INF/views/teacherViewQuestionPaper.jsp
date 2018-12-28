@@ -37,7 +37,6 @@
 										<th>Option3</th>
 										<th>Option4</th>
 										<th>Right Answer</th>
-										<th>Question1</th>
 										<th>Class ID</th>
 										<th>Action</th>
 									</tr>

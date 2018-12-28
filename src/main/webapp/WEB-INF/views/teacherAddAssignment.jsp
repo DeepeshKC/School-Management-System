@@ -19,12 +19,23 @@
 
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-offset-3 col-lg-6">
-							<form:form name="qryform" method="POST" action="add-addAssignments"
-								modelAttribute="assignment">
+					
 
-                                <form:hidden path="teacher" value="${teacher} " />
-                                <form:hidden path="classes" value="${classes}" />
+						<div class="col-lg-offset-3 col-lg-6">
+							<div>
+							${message}
+							Upload Assignment
+							<form enctype="multipart/form-data" action="/uploadAssignment" method="post">
+								<input type="file" name="file" /> <br /> 
+								<input
+									type="submit" value="Upload File" />
+							</form>
+						</div>
+							<form:form name="qryform" method="POST"
+								action="add-addAssignments" modelAttribute="assignment">
+
+								<form:hidden path="teacher" value="${teacher} " />
+								<form:hidden path="classes" value="${classes}" />
 								<div class="form-group">
 									<label>Please Add Assignment Title</label>
 									<form:input path="assignmentTitle" class="form-control"

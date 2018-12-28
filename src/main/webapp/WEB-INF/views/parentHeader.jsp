@@ -11,21 +11,23 @@
 
 <title>School Management System</title>
 
-<!-- Bootstrap Core CSS -->
-<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- MetisMenu CSS -->
-<link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
-<!-- Morris Charts CSS -->
-<link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
-<link href="/vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div id="wrapper">
@@ -62,7 +64,20 @@
 
 						<li><a href="calendar"><i class="fas fa-calendar-alt"></i>
 								Calendar</a></li>
-
+								 <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                                </ul>
+                                </li>
+                                
+					 
+					 <li><a href="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 					
 						
 

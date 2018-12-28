@@ -50,10 +50,8 @@
 												class="fa fa-edit"></span></a>|<a
 											href="deleteExam?id=${exam.getExamId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
-									<td><a href="viewLedger?id=${exam.getExamId()}" class="btn btn-success">View Legder</a>|<a
-											href="deleteExam?id=${exam.getExamId()}"
-											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>
-									
+										<td><a href="viewLedger?id=${exam.getExamId()}"
+											class="btn btn-success">View Legder</a>
 									</tr>
 								</c:forEach>
 							</thead>

@@ -19,13 +19,19 @@
 
 <!-- Custom CSS -->
 <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="../vendor/datatables/dataTables.bootstrap4.min.css">
 
+<script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <!-- Morris Charts CSS -->
 <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+<script src="../vendor/jquery/jquery.min.js" ></script>
+<script src="../vendor/datatables/jquery.dataTables.min.js" ></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js" ></script>
 
 <!-- Custom Fonts -->
 <link href="../vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+
 </head>
 <body>
 	<div id="wrapper">
@@ -132,6 +138,8 @@
 
 						<li><a href="viewAttendance"><i class="fa fa-edit fa-fw"></i>
 								View Attendance</a></li>
+								
+					 <li><a href="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 
 					</ul>
 				</div>

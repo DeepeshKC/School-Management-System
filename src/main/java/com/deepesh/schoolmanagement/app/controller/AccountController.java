@@ -25,6 +25,11 @@ public class AccountController {
 	private StudentRepository studentRepository;
 	@Autowired
 	private RoutineRepository routineRepository;
+	
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String loadLogin() {
+		return "login";
+	}
 
 	@RequestMapping(value = "/userLogin", method = {RequestMethod.POST, RequestMethod.GET})
 	public String loginStudent(Login login, Model model, Model model2) {

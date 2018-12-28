@@ -57,7 +57,7 @@
 								</span>
 							</div> <!-- /input-group -->
 						</li>
-						<li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i>
+						<li><a href="#"><i class="fa fa-dashboard fa-fw"></i>
 								Dashboard</a></li>
 
 						<li><a href="studentCalendars"><i class="fas fa-calendar-alt"></i>
@@ -72,14 +72,17 @@
 								Attend Examination</a></li>
 
 												
-						<li><a href="viewAssignments"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="student/viewAssignments"><i class="fa fa-edit fa-fw"></i>
 								View Assignments</a></li>
 
 						
 						<li><a href="student/viewStudentAttendances?id=${student} "><i class="fa fa-edit fa-fw"></i>
 								View Attendance</a></li>
+								
+								<li><a href="/student/viewMarks?id=${student} "><i class="fa fa-edit fa-fw"></i>
+								View Result</a></li>
 
-					
+					 <li><a href="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 
 					</ul>
 				</div>

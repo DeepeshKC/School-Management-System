@@ -34,13 +34,13 @@ public class OnlineExamController {
 		return "redirect:/online-Exam";
 	}
 
-	@RequestMapping(value = "onlineExams1", method = RequestMethod.GET)
+	@RequestMapping(value = "**/onlineExams1", method = RequestMethod.GET)
 	public String onlineExam(Model model) {
 		model.addAttribute("onlineExamList", qp.findAll());
 		return "onlineExam1";
 	}
 	
-	@RequestMapping(value = "online-Exam1", method = RequestMethod.GET)
+	@RequestMapping(value = "**/online-Exam1", method = RequestMethod.GET)
 	public String onlineExam1(Model model) {
 		model.addAttribute("onlineExamList", qp.findAll());
 		return "onlineExam1";

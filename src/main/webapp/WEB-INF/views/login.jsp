@@ -52,7 +52,6 @@
 								<div class="form-group">
 									<select class="form-control" name="userType">
 										<option value="Student">Student</option>
-										<option value="Admin">Admin</option>
 										<option value="Teacher">Teacher</option>
 										<option value="Parent">Parent</option>
 										<option value="Administrative Staff">Administration Staff</option>

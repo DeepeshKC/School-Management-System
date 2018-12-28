@@ -38,7 +38,7 @@
 									<form:input path="message" class="form-control"
 										placeholder="Type Message" />
 								</div>
-								<button type="submit" class="btn btn-default">Send</button>
+								<button type="submit" class="btn btn-success">Send</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							</form:form>
 						</div>
