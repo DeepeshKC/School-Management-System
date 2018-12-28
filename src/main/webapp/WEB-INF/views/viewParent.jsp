@@ -60,7 +60,7 @@
 										<td>${parent.getStudent().getUsername()}</td>
 									
 										<td><a
-											href="update-updateParent?id=${parent.getParentId()}"
+											href="updateParents?id=${parent.getParentId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
 											href="delete-deleteParent?id=${parent.getParentId()}"
 											class="btn btn-danger"><span class="fa fa-trash"></span></a></td>

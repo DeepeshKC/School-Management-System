@@ -27,10 +27,10 @@ public class QuestionPaperController {
 		return "teacherAddQuestionPaper";
 	}
 
-	@RequestMapping(value = "add-addQuestion", method = RequestMethod.POST)
+	@RequestMapping(value ="**/teacher/add-addQuestion", method = RequestMethod.POST)
 	public String addQuestion(@ModelAttribute("questionPaper") QuestionPaper questionPaper) {
 		Classes c = new Classes();
-		//c.setClassId(1);
+		c.setClassId(Long.parseLong(String.valueOf(5)));
 		questionPaper.setClasses1(c);
 		questionRepository.save(questionPaper);
 		return "redirect:/viewQuestionPapers";
@@ -49,9 +49,9 @@ public class QuestionPaperController {
 	}
 	
 
-	@RequestMapping(value = "delete-deleteQuestionPaper", method = RequestMethod.POST)
+	@RequestMapping(value = "**//delete-deleteQuestionPapers", method = RequestMethod.GET)
 	public String deleteQuestion(@RequestParam("id") Long id, Model model) {
 		questionRepository.deleteById(id);
-		return "redirect:/viewQuestionPaper";
+		return "redirect:teacher/viewQuestionPapers";
 	}
 }

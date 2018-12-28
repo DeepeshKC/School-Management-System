@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.deepesh.schoolmanagement.app.model.Student" %>
+<%
+	if(session.getAttribute("student")==null)
+		response.sendRedirect("login");
+%>
+
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -72,14 +79,14 @@
 								Attend Examination</a></li>
 
 												
-						<li><a href="student/viewAssignments"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="${pageContext.request.contextPath}/student/viewAssignments"><i class="fa fa-edit fa-fw"></i>
 								View Assignments</a></li>
 
 						
-						<li><a href="student/viewStudentAttendances?id=${student} "><i class="fa fa-edit fa-fw"></i>
+						<li><a href="${pageContext.request.contextPath}/student/viewStudentAttendances"><i class="fa fa-edit fa-fw"></i>
 								View Attendance</a></li>
 								
-								<li><a href="/student/viewMarks?id=${student} "><i class="fa fa-edit fa-fw"></i>
+								<li><a href="${pageContext.request.contextPath}/student/viewStudentExam"><i class="fa fa-edit fa-fw"></i>
 								View Result</a></li>
 
 					 <li><a href="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>

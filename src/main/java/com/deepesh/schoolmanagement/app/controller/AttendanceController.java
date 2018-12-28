@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +27,19 @@ public class AttendanceController {
 	@Autowired
 	private StudentRepository studentRepository;
 
+	@Autowired
+	private HttpSession httpSession;
+	
+	
+	
 	@ModelAttribute("attendance")
 	public Attendance attendance() {
 		return new Attendance();
 	}
-	
-	@ModelAttribute("student")
+
+
 	public Student getStudent() {
-		return new Student();
+		return (Student) httpSession.getAttribute("student");
 	}
 
 	@RequestMapping(value = "/teacherViewStudents", method = RequestMethod.GET)
@@ -92,9 +99,9 @@ public class AttendanceController {
 			return "parentViewAttendance";
 		}
 		
-		@RequestMapping(value="**/student/viewStudentAttendances", method= RequestMethod.GET)
-		public String student_viewStudentAttendance(@RequestParam("id")Long id, Model model) {
-			model.addAttribute("attendanceList", attendanceRepository.getAttendanceById(id));
+		@RequestMapping(value="student/viewStudentAttendances", method= RequestMethod.GET)
+		public String student_viewStudentAttendance(Model model) {
+			model.addAttribute("attendanceList", attendanceRepository.findAttendanceByStudent(getStudent()));
 			return "studentViewAttendance";
 		}
 		

@@ -33,6 +33,9 @@ public class Subject {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
 	private List<Routine> routine = new ArrayList<>();
 
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "subject")
+	private List<TestPaper> test = new ArrayList<>();
+
 	public Long getSubjectId() {
 		return subjectId;
 	}
@@ -63,6 +66,14 @@ public class Subject {
 
 	public void setRoutine(List<Routine> routine) {
 		this.routine = routine;
+	}
+
+	public List<TestPaper> getTest() {
+		return test;
+	}
+
+	public void setTest(List<TestPaper> test) {
+		this.test = test;
 	}
 
 }

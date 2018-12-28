@@ -170,7 +170,7 @@
 		text-align: center;
 		font-size: 14px;
 		font-family: 'Roboto', sans-serif;
-		background:url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
+		
 		}
 		
 	#wrap {
@@ -237,11 +237,12 @@ box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
 
 </head>
 <body>
-<jsp:include page="studentHeader.jsp">
+<jsp:include page="studentHeader.jsp"/>
 	<div id='wrap'>
 
-		<div id='calendar'></div>
+		<div style="margin-left: 200px;" id='calendar'></div>
 
 		<div style='clear: both'></div>
+		</div>
 </body>
 </html>

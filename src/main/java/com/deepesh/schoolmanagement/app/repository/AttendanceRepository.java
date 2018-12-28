@@ -16,4 +16,6 @@ public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
 
 	@Query("select att from Attendance att where att.student.id=?1")
 	List<Attendance> getAttendanceById(Long id);
+	
+	List<Attendance> findAttendanceByStudent(Student student);
 }

@@ -240,8 +240,9 @@ box-shadow: 0px 0px 21px 2px rgba(0,0,0,0.18);
 <jsp:include page="teacherHeader.jsp"/>
 	<div id='wrap'>
 
-		<div id='calendar'></div>
+		<div style="margin-left: 200px;"  id='calendar'></div>
 
 		<div style='clear: both'></div>
+		</div>
 </body>
 </html>

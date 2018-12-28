@@ -68,6 +68,10 @@
 								<td>${examMarks.getComputer()}</td>
 								</tr>
 								<tr class="odd gradeX">
+								<td>Nepali</td>
+								<td>${examMarks.getNepali()}</td>
+								</tr>
+								<tr class="odd gradeX">
 								<td>Total Marks</td>
 								<td>${total}</td>
 								</tr>

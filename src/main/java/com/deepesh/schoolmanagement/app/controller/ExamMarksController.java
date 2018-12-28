@@ -1,6 +1,9 @@
 package com.deepesh.schoolmanagement.app.controller;
 
 import java.util.Optional;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.deepesh.schoolmanagement.app.model.ExamMarks;
+import com.deepesh.schoolmanagement.app.model.Student;
 import com.deepesh.schoolmanagement.app.repository.ClassesRepository;
 import com.deepesh.schoolmanagement.app.repository.ExamMarksRepository;
 import com.deepesh.schoolmanagement.app.repository.ExamRepository;
@@ -27,6 +31,13 @@ public class ExamMarksController {
 	private SubjectRepository subjectRepository;
 	@Autowired
 	private ExamMarksRepository examMarksRepository;
+	@Autowired
+	private HttpSession session;
+	
+	public Student getStudent() {
+		return (Student) session.getAttribute("student");
+	}
+	
 
 	@ModelAttribute("examMarks")
 	public ExamMarks getExamMarks() {
@@ -72,16 +83,15 @@ public class ExamMarksController {
 
 	}
 	
-	@RequestMapping(value = "student/viewStudentMarks", method = RequestMethod.GET)
-	public String viewStudentExam(@RequestParam("id") Long id,Model model,Model model1) {
+	@RequestMapping(value = "student/viewStudentExam", method = RequestMethod.GET)
+	public String viewStudentExam( Model model) {
 		model.addAttribute("examList", examRepository.findAll());
-		model1.addAttribute("student", id);
 		return "studentViewExam";
 	}
 	
-	@RequestMapping(value = "**/student/viewMarks", method = RequestMethod.GET)
-	public String student_viewStudentMarks(@RequestParam("id")Long exam_id, @RequestParam("student_id")Long student_id,Model model, Model model2, Model model3) {
-		Optional<ExamMarks> exam= examMarksRepository.findByStudentAndClass(exam_id, student_id);
+	@RequestMapping(value = "student/viewMarks", method = RequestMethod.GET)
+	public String student_viewStudentMarks(@RequestParam("id")Long exam_id,Model model, Model model2, Model model3) {
+		Optional<ExamMarks> exam= examMarksRepository.findByStudentAndClass(exam_id, getStudent().getId());
 		ExamMarks em=exam.get();
 		double total=em.getEnglish()+em.getScience()+em.getNepali()+em.getComputer()+em.getMath();
 		double percentage=total/5;

@@ -25,14 +25,10 @@
 							<div>
 							${message}
 							Upload Assignment
-							<form enctype="multipart/form-data" action="/uploadAssignment" method="post">
-								<input type="file" name="file" /> <br /> 
-								<input
-									type="submit" value="Upload File" />
-							</form>
+
 						</div>
 							<form:form name="qryform" method="POST"
-								action="add-addAssignments" modelAttribute="assignment">
+								action="add-addAssignments" modelAttribute="assignment" enctype="multipart/form-data">
 
 								<form:hidden path="teacher" value="${teacher} " />
 								<form:hidden path="classes" value="${classes}" />
@@ -51,12 +47,11 @@
 									<form:input path="assignmentDeadline" class="form-control"
 										placeholder="Enter assignment deadline" />
 								</div>
-								<div class="form-group">
-									<label>Please Add Assignment File Name</label>
-									<form:input path="assignmentFile" class="form-control"
-										placeholder="Enter assignment file name" />
-								</div>
 
+							<div class="form-group">
+								<label>Upload File</label>
+								<input type="file" name="file" />
+							</div>
 								<button type="submit" class="btn btn-success">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>
 							</form:form>

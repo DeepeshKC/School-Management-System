@@ -135,6 +135,7 @@
 						<li><a href="viewQuestionPapers"><i
 								class="fa fa-edit fa-fw"></i> View Question Paper</a></li>
 								
+						<li><a href="staff/viewTestPapers"><i class="fa fa-edit fa-fw"></i> View  Paper</a>
 					 <li><a href="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 
 					</ul>

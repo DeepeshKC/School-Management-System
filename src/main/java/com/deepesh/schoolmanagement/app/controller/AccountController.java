@@ -1,5 +1,7 @@
 package com.deepesh.schoolmanagement.app.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,12 +21,22 @@ import com.deepesh.schoolmanagement.app.repository.StudentRepository;
 @Controller
 public class AccountController {
 
+	
+	
+	
 	@Autowired
 	private AccountRepository accountRepository;
 	@Autowired
 	private StudentRepository studentRepository;
 	@Autowired
 	private RoutineRepository routineRepository;
+	@Autowired
+	private HttpSession session;
+	
+	public Student getStudent() {
+		return (Student) session.getAttribute("student");
+	}
+	
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String loadLogin() {
@@ -40,7 +52,8 @@ public class AccountController {
 			if (student != null) {
 				System.out.println("logged in");
 				model.addAttribute("routineList", routineRepository.findRoutineByStudentId(student.getId()));
-				model2.addAttribute("student", student.getId());
+				model2.addAttribute("student", student);
+				session.setAttribute("student", student);
 				return "studentDasboard";
 			} else {
 
@@ -103,4 +116,6 @@ public class AccountController {
 		return "login";
 	}
 
+	
+	
 }

@@ -57,6 +57,9 @@ public class Teacher {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
 	private List<Assignment> assignment = new ArrayList<>();
 	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "teacher")
+	private List<Resource> resource = new ArrayList<>();
+	
 	public Long getTeacherId() {
 		return teacherId;
 	}
@@ -143,6 +146,14 @@ public class Teacher {
 
 	public void setAssignment(List<Assignment> assignment) {
 		this.assignment = assignment;
+	}
+
+	public List<Resource> getResource() {
+		return resource;
+	}
+
+	public void setResource(List<Resource> resource) {
+		this.resource = resource;
 	}
 	
 

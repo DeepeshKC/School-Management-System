@@ -28,40 +28,40 @@
 								<div class="form-group">
 									<label>Please update first name</label>
 									<form:input path="firstName" class="form-control"
-										value="${administrativeStaff.getFirstName()}" />
+										value="${administrativeStaff.getFirstName()}" required="required"/>
 								</div>
 								<div class="form-group">
 									<label>Please update last name</label>
 									<form:input path="lastName" class="form-control"
-										value="${administrativeStaff.getLastName()}" />
+										value="${administrativeStaff.getLastName()}" required="required"/>
 								</div>
 								<div class="form-group">
 									<label>Please update username</label>
 									<form:input path="username" class="form-control"
-										value="${administrativeStaff.getUsername()}" />
+										value="${administrativeStaff.getUsername()}" required="required"/>
 								</div>
 								<div class="form-group">
 									<label>Please update email address</label>
 									<form:input path="email" class="form-control"
-										value="${administrativeStaff.getEmail()}" />
+										value="${administrativeStaff.getEmail()}" required="required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please update password</label>
 									<form:input path="password" class="form-control"
-										value="${administrativeStaff.getPassword()}" />
+										value="${administrativeStaff.getPassword()}"required="required" />
 								</div>
 
 								<div class="form-group">
 									<label>Please update address</label>
 									<form:input path="address" class="form-control"
-										value="${administrativeStaff.getAddress()}" />
+										value="${administrativeStaff.getAddress()}" required="required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please update Contact Number</label>
 									<form:input path="contactNo" class="form-control"
-										value="${administrativeStaff.getContactNo()}" />
+										value="${administrativeStaff.getContactNo()}" required="required"/>
 								</div>
 								<button type="submit" class="btn btn-default">Update</button>
 								<button type="reset" class="btn btn-default">Reset</button>

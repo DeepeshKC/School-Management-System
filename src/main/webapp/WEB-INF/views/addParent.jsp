@@ -26,53 +26,53 @@
 								<div class="form-group">
 									<label>Please add first name</label>
 									<form:input path="firstName" class="form-control"
-										placeholder="Enter Parent's First Name" />
+										placeholder="Enter Parent's First Name" required= "required"/> 
 								</div>
 								<div class="form-group">
 									<label>Please add last name</label>
 									<form:input path="lastName" class="form-control"
-										placeholder="Enter Parent's Last Name" />
+										placeholder="Enter Parent's Last Name" required= "required"/>
 								</div>
 								<div class="form-group">
 									<label>Please add username</label>
 									<form:input path="username" class="form-control"
-										placeholder="Enter Parent's Username" />
+										placeholder="Enter Parent's Username" required= "required"/>
 								</div>
 								<div class="form-group">
 									<label>Please add email address</label>
 									<form:input path="email" class="form-control"
-										placeholder="Enter E-mail Address" />
+										placeholder="Enter E-mail Address" required= "required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please add password</label>
 									<form:input path="password" class="form-control"
-										placeholder="Enter password" />
+										placeholder="Enter password" required= "required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please add Address</label>
 									<form:input path="address" class="form-control"
-										placeholder="Enter Address" />
+										placeholder="Enter Address" required= "required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please add Contact Number</label>
 									<form:input path="contactNo" class="form-control"
-										placeholder="Enter Contact Number" />
+										placeholder="Enter Contact Number" required= "required"/>
 								</div>
 
 								<div class="form-group">
 									<label>Please add Profession</label>
 									<form:input path="profession" class="form-control"
-										placeholder="Enter Profession" />
+										placeholder="Enter Profession" required= "required"/>
 								</div>
 								
 								
 								<div class="form-group">
 									<label>Please state Relationship to student</label>
 									<form:input path="relationship" class="form-control"
-										placeholder="Enter Relationship" />
+										placeholder="Enter Relationship"required= "required" />
 								</div>
 								<button type="submit" class="btn btn-default">Submit</button>
 								<button type="reset" class="btn btn-default">Reset</button>

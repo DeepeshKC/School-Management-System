@@ -46,8 +46,8 @@
 										<td>${exam.getExamTitle()}</td>
 										<td>${exam.getExamDescription()}</td>
 										<td>${exam.getExamDate()}</td>
-										
-									<td><a href="student/viewMarks?id=${exam.getExamId()}&student_id=${student}" class="btn btn-success">View Legder</a>
+										 
+									<td><a href="${pageContext.request.contextPath}/student/viewMarks?id=${exam.getExamId()}" class="btn btn-success">View Legder</a>
 											</td>
 									
 									</tr>

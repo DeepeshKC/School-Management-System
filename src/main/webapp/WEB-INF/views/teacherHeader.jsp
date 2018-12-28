@@ -85,17 +85,13 @@
 
 
 
-
-						<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
-								Charts<span class="fa arrow"></span></a>
-							<ul class="nav nav-second-level">
-								<li><a href="flot.html">Flot Charts</a></li>
-								<li><a href="morris.html">Morris.js Charts</a></li>
-							</ul></li>
-
+                                 <li><a href="teacher/addTestPapers"><i
+								class="fa fa-edit fa-fw"></i>Upload Test Paper</a></li>
+					
+                   <li><a href="teacher/viewTestPapers"><i class="fa fa-edit fa-fw"></i>View Paper</a></li>
 
 						<li><a href="/login"><i class="fa fa-sign-out fa-fw"></i>
-								Logout</a>
+								Logout</a></li>
 					</ul>
 
 

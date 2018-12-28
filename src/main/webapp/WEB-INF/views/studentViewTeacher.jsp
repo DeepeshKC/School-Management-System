@@ -48,7 +48,7 @@
 										<td>${teacher.getEmail()}</td>
 									
 										<td><a
-											href="studentViewResource?id=${teacher.getTeacherId()}"
+											href="student/viewResources?id=${teacher.getTeacherId()}"
 											class="btn btn-success">View</a></td>
 									</tr>
 								</c:forEach>

@@ -45,7 +45,10 @@
 										<td>${assignment.getAssignmentTitle()}</td>
 										<td>${assignment.getAssignmentDescription()}</td>
 										<td>${assignment.getAssignmentDeadline()}</td>
-										<td>${assignment.getAssignmentFile()}</td>
+										<td><form action="/downloadAssignment" method="get">
+											<input type="hidden" name="link" value="${assignment.getAssignmentFile()}"/>
+											<button type="submit" class="btn btn-primary">Download File</button>
+										</form></td>
 										<td><a href="update-updateAssignment?id=${assignment.getAssignmentId()}"
 											class="btn btn-success"><span class="fa fa-edit"></span></a>|<a
 											href="delete-deleteAssignment?id=${assignment.getAssignmentId()}"

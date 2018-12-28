@@ -20,7 +20,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-offset-3 col-lg-6">
-							<form:form name="qryform" method="POST" action="add-addQuestion"
+							<form:form name="qryform" method="POST" action="teacher/add-addQuestion"
 								modelAttribute="questionPaper">
 								<div class="form-group">
 									<label>Please Add Question Paper Name</label>
